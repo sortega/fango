@@ -1,4 +1,8 @@
-# Salir del pozo de  brea
+# Saliendo del pozo de  brea
+
+Traducción al castellano del artículo "Out of the Tar Pit"
+
+**Traducción en progreso**
 
 Autores:
 
@@ -7,8 +11,6 @@ Autores:
 
 Traductores:
  - ???
-
-Traducción al castellano del artículo "Out of the Tar Pit"
 
 ## Resumen
 
