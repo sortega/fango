@@ -76,6 +76,14 @@ Como comentario final, recordar al lector que SQL, en cualquier versión, no
 sigue fielmente el modelo relacional [Cod90, p371, Serious flaws in SQL],
 [Dat04, p xxiv] por lo que aconsejamos no equiparar ambos.
 
+### 8.1 Estructura
+#### 8.1.1 Relaciones
+#### 8.1.2 Beneficios estructurales de las relaciones - Independencia del camino de acceso
+### 8.2 Manipulación
+### 8.3 Integridad
+### 8.4 Independencia de datos
+### 8.5 Extensions
+
 ## 9. Programación relacional funcional
 
 ## 10. Exemplo de un sistema FRP
