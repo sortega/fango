@@ -169,6 +169,40 @@ estructurar datos y los modelos jerárquico y en red.
 Finalmente, una ventaja de las relaciones como forma de estructurar datos en contraposición a aproximaciones como el modelo entidad-relación de Chen [Che76] es que no se hace distinción alguna entre *entidad* y *relación*. (Utilizar dicha distinción puede ser problemático porque puede ser muy subjetivo clasificar algo como *entidad* o como *relación*.)
 
 ### 8.2 Manipulación
+
+Codd introdujo dos mecanismos diferentes para expresar la manipulación de datos
+en el modelo relacional: el cálculo relacional y el álgebra relacional. Ambos
+son formalmente equivalentes en el sentido de que expresiones de cada uno pueden
+convertirse a otras equivalentes del otro y por lo tanto nos bastará con
+considerar solo el álgebra.
+
+El álgebra relacional (en una forma ligeramente diferente de cómo lo presentó
+Codd originalmente) consiste en las siguientes ocho operaciones:
+
+ - **Restricción (restrict).** Operación unaria que permite la selección de un
+   subconjunto
+   de los registros de acuerdo a un criterio dado.
+ - **Proyección (project).** Operación unaria que produce una nueva relación en
+   la que
+   algunos atributos han sido eliminados.
+ - **Producto (product).** Operación binaria que se corresponde con el producto
+   cartesiano tal y como se define en matemáticas.
+ - **Unión (union).** Operación binaria que produce una relación que contiene
+   todos los registros que figuran en uno u otro operando.
+ - **Intersección (intersection).** Operación binaria que produce una relación
+   con todos los registros que figuran en ambos operandos simultáneamente.
+ - **Diferencia (difference).** Operación binaria que produce una relación con
+   los registros del primer operando que no figuran en el segundo.
+ - **Combinar (join).** Operación binaria que produce todos los posibles
+   registros que resultan juntar registros de ambos operandos cuyo valor de
+   ciertos atributos coincide.
+ - **Dividir (divide).** Es una operación ternaria que devuelve todos los
+   registros del primer argumento que aparecen en el segundo asociados con *cada
+   uno* de los registros del tercero.
+   
+Uno de los beneficios más significativos de este lenguaje de manipulación
+(aparte de su simplicidad) es que tiene la propiedad de *clausura*: todos los operandos y resultados son de la misma clase (relaciones). Por lo tanto, las operaciones se pueden anidar de forma arbitraria (lo que de hecho es inherente a cualquier álgebra monotipo).
+
 ### 8.3 Integridad
 ### 8.4 Independencia de datos
 ### 8.5 Extensiones
