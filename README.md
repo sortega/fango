@@ -204,6 +204,27 @@ Uno de los beneficios más significativos de este lenguaje de manipulación
 (aparte de su simplicidad) es que tiene la propiedad de *clausura*: todos los operandos y resultados son de la misma clase (relaciones). Por lo tanto, las operaciones se pueden anidar de forma arbitraria (lo que de hecho es inherente a cualquier álgebra monotipo).
 
 ### 8.3 Integridad
+
+La integridad en el modelo relacional se mantiene simplemente con especificar,
+de forma puramente declarativa, una serie de restricciones que deben cumplirse
+en todo momento.
+
+Cualquier infraestructura que implemente el modelo relacional debe garantizar
+que estas restricciones se cumplen, específicamente en los intentos de modificar
+el estado que puedan contravenir las restricciones tienen que ser rechazadas o
+restringidas a operar dentro de los límites.
+
+Las restricciones más comunes son aquellas identificando claves *candidatas* o
+*primarias* y claves *extrajeras*. Las restricciones pueden llegar a ser
+arbitrariamente complejas, involucrar múltiples relaciones y ser construidas
+utilizando tanto el álgebra como el cálculo relacional.
+
+Finalmente, muchos sistemas gestores de bases de datos comerciales proveen
+mecanismos *imperativos* como los disparadores (*triggers*) para mantener la
+integridad de los datos. Estos mecanismos sufren de los problemas sobre flujo de
+control comentados en la sección 4.2 y *no se consideran* parte del modelo
+relacional.
+
 ### 8.4 Independencia de datos
 ### 8.5 Extensiones
 
