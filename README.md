@@ -9,13 +9,13 @@ Autores:
  - Ben Moseley ben@moseley.name
  - Peter Marks public@indigomail.net
 
-Traductores:
- - ???
+Traducción:
+ - Sebastián Ortega
 
 ## Resumen
 
 El mayor obstáculo en el desarrollo de sistemas software de envergadura es la
-complejidad. En consononacia con Brooks, distinguimos entre complejidad
+complejidad. En consonancia con Brooks, distinguimos entre complejidad
 accidental y esencial pero no aceptamos su premisa de que la mayoría de la
 complejidad que se puede encontrar en los sistemas actuales es esencial.
 Identificamos las causas más comunes de la complejidad y discutimos
@@ -42,15 +42,15 @@ y el modelo de datos relacional de Codd.
 
 A pesar de sus orígenes, el modelo relacional [Cod70] *en si mismo* no tiene
 nada que ver con bases de datos. No es más que una forma elegante de
-*estruturar* datos, una forma de *manipular* los mismos y  un mecanismo para
-mantener estado *íntegro* y consistente. Estas caracterísiticas son aplicables
+*estructurar* datos, una forma de *manipular* los mismos y  un mecanismo para
+mantener estado *íntegro* y consistente. Estas características son aplicables
 a estado y datos en cualquier contexto.
 
 A parte de estas tres áreas [Cod79, section 2.1], [Dat04, p109], un cuarto
 punto fuerte del modelo relacional es el énfasis en tener una marcada
 separación entre la capa lógica y física del sistema. Esto se traduce en que
 el diseño del modelo lógico (minimizando la complejidad) es atacado de forma
-separada del diseño del modelo de almcenamiento físico y de la correspondencia
+separada del diseño del modelo de almacenamiento físico y de la correspondencia
 entre ambos[^15]. Este principio de denomina *independencia de datos* y es una
 parte crucial del modelo relacional [Cod70, section 1.1].
 
@@ -77,16 +77,48 @@ sigue fielmente el modelo relacional [Cod90, p371, Serious flaws in SQL],
 [Dat04, p xxiv] por lo que aconsejamos no equiparar ambos.
 
 ### 8.1 Estructura
+
 #### 8.1.1 Relaciones
+
+Como se ha mencionado previamente, las relaciones son la única forma de
+estructurar datos en el modelo relacional. Una relación se puede ver como un
+*conjunto de registros* homogéneo en el que cada registro es conjunto
+heterogéneo de *atributos* con nombre (ligeramente distinto del concepto
+matemático de relación como conjunto de tuplas cuyos componentes se identifican
+por su posición en lugar de por nombre).
+
+Esta definición implica que una relación, por el hecho de ser un conjunto, no
+puede contener duplicados y no tiene orden. Ambas restricciones contrastan con
+el uso cotidiano de la palabra *tabla* que obviamente puede contener filas
+duplicadas (y nombres de columna) y, por el hecho de ser una entidad visual en
+una página, inevitablemente sus filas y columnas aparecen en un orden
+determinado.
+
+Las relaciones puede ser de estos tipos:
+
+ - **Relaciones base**. Aquellas directamente almacenadas.
+ - **Relaciones derivadas** (conocidas como *vistas*). Definidas en términos de
+   otras relaciones (a su vez base o derivadas). Ver sección 8.2.
+
+Como propone Date [Dat04], es útil pensar en cada relación como un único *valor*
+(aunque compuesto) y considerar el estado mutable no como una "relación mutable"
+sino como una *variable* que en cada momento está asociada a una relación
+*valor* concreta que cambia con el tiempo. Date llama a estas variables
+*variables relación* o *relvars*, lo que lleva a los términos *relvar base* y
+*relvar derivada*. Utilizaremos su terminología de aquí en adelante. (Sin
+embargo, nuestra definición de relación es ligeramente distinta ya que,
+siguiendo las prácticas estándar en tipado estático, no consideramos el tipo
+como parte del valor.)
+
 #### 8.1.2 Beneficios estructurales de las relaciones - Independencia del camino de acceso
 ### 8.2 Manipulación
 ### 8.3 Integridad
 ### 8.4 Independencia de datos
-### 8.5 Extensions
+### 8.5 Extensiones
 
 ## 9. Programación relacional funcional
 
-## 10. Exemplo de un sistema FRP
+## 10. Ejemplo de un sistema FRP
 
 ## 11. Trabajo relacionado
 
@@ -109,7 +141,7 @@ sigue fielmente el modelo relacional [Cod90, p371, Serious flaws in SQL],
   software engineering. *Information Processing 1986, Proceedings of the Tenth
   World Computing Conference*, H.-J. Kugler, ed.: 1069–76. Reprinted in IEEE
   Computer, 20(4):10-19, April 1987, and in Brooks, The Mythical Man-Month:
-  Essays on Software Engineer- ing, Anniversary Edition, Chapter 16,
+  Essays on Software Engineering, Anniversary Edition, Chapter 16,
   Addison-Wesley, 1995.
 
 - [Che76] P. P. Chen. The Entity-Relationship Model. *ACM Trans. on Database
@@ -147,11 +179,11 @@ sigue fielmente el modelo relacional [Cod90, p371, Serious flaws in SQL],
 
 - [EH97] Conal Elliott and Paul Hudak. Functional reactive animation. In
   *Proceedings of the ACM SIGPLAN International Conference on Functional
-  Programming (ICFP-97)*, volume 32,8 of ACM SIG- PLAN Notices, pages 263–273,
+  Programming (ICFP-97)*, volume 32,8 of ACM SIGPLAN Notices, pages 263–273,
   New York, June 9–11 1997. ACM Press.
 
-- [HJ89] I. Hayes and C. Jones. Specifications are not (necessarily) exe-
-  cutable. *IEE Software Engineering Journal*, 4(6):330–338, Novem- ber 1989.
+- [HJ89] I. Hayes and C. Jones. Specifications are not (necessarily) executable.
+  *IEE Software Engineering Journal*, 4(6):330–338, November 1989.
 
 - [Hoa81] C. A. R. Hoare. The emperor’s old clothes. *Commun. ACM*, 24(2):75–83,
   1981.
@@ -159,8 +191,8 @@ sigue fielmente el modelo relacional [Cod90, p371, Serious flaws in SQL],
 - [Kow79] Robert A. Kowalski. Algorithm = logic + control. *Commun. ACM*,
   22(7):424–436, 1979.
 
-- [Mer85] T. H. Merrett. Persistence and Aldat. In *Data Types and Persis-
-  tence (Appin)*, pages 173–188, 1985.
+- [Mer85] T. H. Merrett. Persistence and Aldat. In *Data Types and Persistence
+  (Appin)*, pages 173–188, 1985.
 
 - [NR69] P.Naur and B.Randell. Software engineering report of a conference
   sponsored by the NATO science committee Garmisch Germany 7th-11th October
