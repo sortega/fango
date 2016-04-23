@@ -110,7 +110,64 @@ embargo, nuestra definición de relación es ligeramente distinta ya que,
 siguiendo las prácticas estándar en tipado estático, no consideramos el tipo
 como parte del valor.)
 
-#### 8.1.2 Beneficios estructurales de las relaciones - Independencia del camino de acceso
+#### 8.1.2 Beneficios estructurales de las relaciones - Independencia de la forma de acceso
+
+Estructurar datos mediante relaciones es una idea atractiva porque no es
+necesario tomar decisiones *subjetivas* de antemano acerca de la *forma de
+acceso* que será más adelante utilizada para consultar y procesar los datos.
+
+Para comprender que entendemos por *forma o camino de acceso*, consideremos un
+ejemplo simple. Supongamos que queremos representar información acerca de
+empleados y los departamentos en los que éstos trabajan. Un sistema en el que
+elegir la estructura de los datos implique decidir las "rutas" posibles entre
+las instancias de los datos (por ejemplo *desde* un empleado dado *hasta* un
+departamento) es *dependiente del camino de acceso*.
+
+Las dos principales formas de estructurar datos que precedieron al modelo
+relacional (los modelos jerárquico y en red) eran ambos dependientes del camino
+en este sentido. Por ejemplo, en el modelo jerárquico se debe tomar de forma
+temprana una decisión sobre si el departamento es el nivel raíz (cada
+departamento "contiene" sus empleados) o viceversa (los empleados "contienen"
+sus departamentos). Esta decisión impactará todos los usos futuros de los datos.
+En el primer caso, será fácil enumerar todos los empleados de un determinado
+departamento (siguiendo el camino de acceso) pero será más difícil enumerar el
+departamento de un empleado dado (habrá que usar alguna otra técnica que
+implique buscar en todos los departamentos). En el segundo caso tendremos el
+problema inverso.
+
+El modelo en red alivió el problema en cierto modo al permitir múltiples caminos
+de acceso entre las instancias de datos (con lo que se podría decidir tener
+ambos caminos desde departamento a empleado y viceversa). El problema consiste
+en que es imposible predecir de antemano cuales serán los caminos de acceso y
+por este motivo siempre habrá una discrepancia entre:
+
+ - **Requisitos de recuperación primarios.** Éstos pueden ser previstos y
+   satisfechos simplemente siguiendo los caminos de acceso definidos.
+ - **Requisitos de recuperación secundarios.** Éstos puede ser no previstos o
+   simplemente no tener un soporte específico y por lo tanto sólo pueden ser
+   provistos mediante mecanismos alternativos como búsquedas.
+   
+Una de las razones principales por las que el modelo relacional prevaleció sobre
+los modelos jerárquico y en red es la capacidad de *evitar* completamente el
+concepto de camino de acceso.
+
+También es interesante considerar brevemente lo que implica aplicar una
+aproximación orientada a objetos (OOP) a nuestro ejemplo. Podemos elegir entre
+estas opciones:
+
+ - Dar a los objetos `Employee` una referencia a su `Department`.
+ - Dar a los objetos `Department` un conjunto (o array) de referencias a sus
+   objetos `Employee`.
+ - Todas las anteriores.
+ 
+Si elegimos la tercera opción nos exponemos en el mejor caso al trabajo
+adicional de mantener referencias redundantes y en el peor a introducir errores.
+
+Hay inquietantes similitudes entre las aproximaciones de la OOP y el XML a cómo
+estructurar datos y los modelos jerárquico y en red.
+
+Finalmente, una ventaja de las relaciones como forma de estructurar datos en contraposición a aproximaciones como el modelo entidad-relación de Chen [Che76] es que no se hace distinción alguna entre *entidad* y *relación*. (Utilizar dicha distinción puede ser problemático porque puede ser muy subjetivo clasificar algo como *entidad* o como *relación*.)
+
 ### 8.2 Manipulación
 ### 8.3 Integridad
 ### 8.4 Independencia de datos
