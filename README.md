@@ -226,7 +226,28 @@ control comentados en la sección 4.2 y *no se consideran* parte del modelo
 relacional.
 
 ### 8.4 Independencia de datos
+
+La *independencia de datos* es el principio por el que se separa el modelo
+lógico de los datos de la representación física almacenada, y fue una de las
+motivaciones que originaron el modelo relacional.
+
+Es interesante darse cuenta de que el principio de *independencia de datos* es
+de hecho análogo a la separación entre lo accidental y lo esencial recomendada
+en la sección 7.3.2. Esto mismo es una de las razones que motivan la adopción de
+la Programación Relacional Funcional (ver sección 9).
+
 ### 8.5 Extensiones
+
+A pesar de ser flexible, el álgebra relacional es un lenguaje restrictivo en
+términos computacionales (no es Turing-completo) y de forma habitual es
+extendido de diversas formas en sus implementaciones prácticas. Algunas
+extensiones comunes son:
+
+ - **Capacidades de computación generales.** Como por ejemplo aritmética simple
+   y capacidad de utilizar funciones definidas por el usuario.
+ - **Operadores de agregación.** Como `MAX`, `MIN`, `COUNT`, `SUM`, etc.
+ - **Capacidades de agrupado y resumen.** Para poder aplicar fácilmente las
+   operaciones de agregación.
 
 ## 9. Programación relacional funcional
 
