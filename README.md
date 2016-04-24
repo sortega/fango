@@ -1,4 +1,4 @@
-# Saliendo del pozo de  brea
+# Saliendo del pozo de brea
 
 Traducción al castellano del artículo "Out of the Tar Pit"
 
@@ -256,6 +256,30 @@ extensiones comunes son:
 ## 11. Trabajo relacionado
 
 ## 12. Conclusiones
+
+Hemos presentado como la *complejidad* es la mayor fuente de problemas para los
+grandes sistemas software. También hemos discutido cómo *puede* ser domesticada
+pero sólo a través de un esfuerzo consciente de *evitarla* en la cuando es
+posible y *separándola* cuando no lo es. Específicamente, hemos determinado que
+un sistema puede ser fructíferamente *separado* en tres partes principales: el
+*estado esencial*, la *lógica esencial* y el *estado y control accidentales*.
+
+Creemos que la aplicación de estos principios al diseño del alto nivel de un
+sistema (utilizando diferentes *lenguajes* especializados para los diferentes
+componentes) puede ofrecer más en términos de simplicidad que la adopción no
+estructura de un único lenguaje de propósito general cualquiera (bien
+imperativo, lógico o funcional). La argumentación de este punto incluye un
+repaso de cada uno de los paradigmas de programación más comunes con especial
+atención a los puntos débiles de la orientación a objetos como un ejemplo
+particular de la aproximación imperativa.
+
+En aquellos casos (como en los grandes sistemas preexistentes) donde esta
+*separación* no puede ser aplicada directamente creemos que se debe hacer
+énfasis en evitar el estado, el control explícito en la medida de lo posible y
+luchar por todos los medios de *librarse del código*.
+
+Finalmente, ¿cuál es la salida del pozo de brea? ¿Cuál es la bala de plata?
+...podría no ser el FRP pero creemos indudablemente que es la *simplicidad*.
 
 ## Referencias
 
