@@ -38,6 +38,31 @@ y el modelo de datos relacional de Codd.
 
 ## 7. Recomendaciones generales
 
+Dado que nuestras recomendaciones principales giran alrededor de intentar
+*evitar* tanta complejidad accidental como sea posible, necesitamos preguntarnos
+*qué* complejidad deben ser considerada accidental y cuál esencial.
+
+Debemos responder esta pregunta considerando qué complejidad es *imposible*
+evitar incluso en un mundo ideal (esto es básicamente nuestra *definición* de
+esencial). A continuación veremos cómo de realista es este mundo ideal y
+finalmente daremos algunas recomendaciones.
+
+### 7.1 Mundo ideal
+#### 7.1.1 Estado en el mundo ideal
+#### 7.1.2 Control en el mundo ideal
+#### 7.1.3 Resumen
+
+### 7.2 Limitaciones teóricas y prácticas
+#### 7.2.1 Lenguajes de especificación formal
+#### 7.2.2 Facilidad de expresión
+#### 7.2.3 Complejidad accidental requerida
+
+### 7.3 Recomendaciones
+#### 7.3.1 Complejidad accidental requerida
+#### 7.3.2 Separación y relaciones entre los componentes
+
+### 7.4 Resumen
+
 ## 8. Modelo relacional
 
 A pesar de sus orígenes, el modelo relacional [Cod70] *en si mismo* no tiene
