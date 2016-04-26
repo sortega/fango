@@ -11,6 +11,7 @@ Autores:
 
 Traducción:
  - Sebastián Ortega
+ - Álvaro Castellanos
 
 ## Resumen
 
@@ -21,45 +22,51 @@ complejidad que se puede encontrar en los sistemas actuales es esencial.
 Identificamos las causas más comunes de la complejidad y discutimos
 aproximaciones generales para minimizar la complejidad de naturaleza
 accidental. Para hacer más concreta la exposición, se bosqueja una potencial
-aproximación a la minimización de complejidad basada en _programación funcional_
-y el modelo de datos relacional de Codd.
+aproximación a la minimización de complejidad basada en la *programación
+funcional* y en el modelo de datos relacional de Codd.
 
 ## 1. Introducción
 
 La "crisis del software" fue identificada por primera vez en 1968 [NR69, p70] y
-en las siguientes décadas se ha agravado en lugar de disminuir. El mayor
-problema en el desarrollo y mantenimiento de sistemas software de envergadura
-es la complejidad - los grandes sistemas son difíciles de comprender. Creemos
-que el mayor contribuidor para esta complejidad en muchos sistemas es el
-manejo de _estado_ y la carga que éste añade cuando se intenta analizar y
+en las décadas que han transcurrido desde entonces se ha profundizado en lugar
+de aliviarse. El mayor problema en el desarrollo y mantenimiento de grandes
+sistemas software es la complejidad: estos sistemas son difíciles de comprender.
+Creemos que en muchos casos el mayor contribuyente para esta complejidad es la
+gestión del *estado* y el lastre que añade cuando se intenta analizar y
 razonar acerca del sistema. Otros contribuyentes estrechamente relacionados son
-_volumen de código_, y concretamente con el _flujo de control_ a través del
-sistema.
-The classical ways to approach the difficulty of state include object-
-oriented programming which tightly couples state together with related be-
-haviour, and functional programming which — in its pure form — eschews
-state and side-effects all together. These approaches each suffer from various
-(and differing) problems when applied to traditional large-scale systems.
-Nosotros argumentamos que es posible tomar ideas útiles de ambos y que -
-combinados con algunas ideas del mundo de las bases de datos relacionales - este
-acercamiento ofrece significativo potencial para simplificar la construcción
-de sistemas software de envergadura.
-El paper está dividido en dos mitades. En la primera mitad nosotros hacemos foco
-en la complejidad. En la sección 2, vemos la complejidad en general y
-justificamos nuestra creencia de que es la raíz de la crisis, entonces vemos
-cómo actualmente intentamos entender los sistemas en la sección 3. En la
-sección 4, vemos los casos de complejidad (p. ej. las cosas que dificultan la
-compresión) antes de discutir los clásicos enfoques para manejar estas causas de
-complejidad en la sección 5. En la sección 6, definimos qué entendemos por
-"accidental" y "esencial" y después en la sección 7 damos recomendaciones para
-abordar de distintas formas las causas de la complejidad - con énfasis en 
-prevenir los problemas en lugar de hacerles frente.
-En la segunda mitad del paper consideramos con más detalle un posible enfoque
-de nuestra estrategia recomendada. Comenzamos con una revisión del modelo
-relacional en la sección 8 y damos un breve ejemplo de cómo éste podría ser
+el *volumen de código* y, de forma especialmente preocupante, el *flujo de
+control* a través del sistema.
+
+Las estrategias clásicas para gestionar el estado incluyen a la programación
+orientada a objetos, que acopla estrechamente estado y comportamiento, y la
+programación funcional, que en su forma más pura evita completamente el estado y
+los efectos laterales. Estas estrategias padecen de varios (y diferentes)
+problemas cuando se aplican al diseño de grandes sistemas de forma tradicional.
+
+Defendemos que es posible tomar ideas útiles de ambas estrategias y que,
+en combinación con algunas ideas del mundo de las bases de datos relacionales,
+se puede tomar una aproximación que con un significativo potencial para
+simplificar la construcción de grandes sistemas software.
+
+Este artículo está dividido en dos mitades. En la primera mitad nos centramos en
+la complejidad. En la sección 2, examinamos la complejidad en general y
+justificamos nuestra creencia de que ésta es la raíz de la crisis para, a
+continuación examinar cómo se intenta comprender un sistema en la actualidad en
+la sección 3. En la sección 4, examinamos las causas de la complejidad (i.e.
+aquello que dificulta la compresión) antes de discutir los enfoques clásicos
+para gestionar estas causas en la sección 5. En la sección 6, definimos qué
+entendemos por "accidental" y "esencial" y después en la sección 7 damos
+recomendaciones para abordar de forma alternativa las causas de la complejidad
+(con énfasis en prevenir los problemas en lugar de afrontarlos).
+
+En la segunda mitad del artículo consideramos con más detalle un posible enfoque
+que sigue estrategia recomendada. Comenzamos con una revisión del modelo
+relacional en la sección 8 y una descripción de una potencial estrategia en la
+sección 9. En la sección 10 proveemos un breve ejemplo de cómo éste podría ser
 usado.
-Finalmente contrastamos nuestros argumentos con otros en la sección 11 y damos
-unas conclusiones en la sección 12.
+
+Finalmente contrastamos nuestra aproximación con otras posibles en la sección 11
+y concluimos en la sección 12.
 
 ## 2. Complejidad
 
