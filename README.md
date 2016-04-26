@@ -26,6 +26,41 @@ y el modelo de datos relacional de Codd.
 
 ## 1. Introducción
 
+La "crisis del software" fue identificada por primera vez en 1968 [NR69, p70] y
+en las siguientes décadas se ha agravado en lugar de disminuir. El mayor
+problema en el desarrollo y mantenimiento de sistemas software de envergadura
+es la complejidad - los grandes sistemas son difíciles de comprender. Creemos
+que el mayor contribuidor para esta complejidad en muchos sistemas es el
+manejo de _estado_ y la carga que éste añade cuando se intenta analizar y
+razonar acerca del sistema. Otros contribuyentes estrechamente relacionados son
+_volumen de código_, y concretamente con el _flujo de control_ a través del
+sistema.
+The classical ways to approach the difficulty of state include object-
+oriented programming which tightly couples state together with related be-
+haviour, and functional programming which — in its pure form — eschews
+state and side-effects all together. These approaches each suffer from various
+(and differing) problems when applied to traditional large-scale systems.
+Nosotros argumentamos que es posible tomar ideas útiles de ambos y que -
+combinados con algunas ideas del mundo de las bases de datos relacionales - este
+acercamiento ofrece significativo potencial para simplificar la construcción
+de sistemas software de envergadura.
+El paper está dividido en dos mitades. En la primera mitad nosotros hacemos foco
+en la complejidad. En la sección 2, vemos la complejidad en general y
+justificamos nuestra creencia de que es la raíz de la crisis, entonces vemos
+cómo actualmente intentamos entender los sistemas en la sección 3. En la
+sección 4, vemos los casos de complejidad (p. ej. las cosas que dificultan la
+compresión) antes de discutir los clásicos enfoques para manejar estas causas de
+complejidad en la sección 5. En la sección 6, definimos qué entendemos por
+"accidental" y "esencial" y después en la sección 7 damos recomendaciones para
+abordar de distintas formas las causas de la complejidad - con énfasis en 
+prevenir los problemas en lugar de hacerles frente.
+En la segunda mitad del paper consideramos con más detalle un posible enfoque
+de nuestra estrategia recomendada. Comenzamos con una revisión del modelo
+relacional en la sección 8 y damos un breve ejemplo de cómo éste podría ser
+usado.
+Finalmente contrastamos nuestros argumentos con otros en la sección 11 y damos
+unas conclusiones en la sección 12.
+
 ## 2. Complejidad
 
 ## 3. Formas de comprender un sistema
