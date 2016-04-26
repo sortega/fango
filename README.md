@@ -69,6 +69,79 @@ y concluimos en la sección 12.
 
 ## 2. Complejidad
 
+En su clásico artículo, "No Silver Bullet", Brooks [Bro86] identificó cuatro
+propiedades de los sistemas software que hacen el desarrollo de software
+difícil: Complejidad, Conformidad, Facilidad de cambio e Invisibilidad. De entre
+ellas, creemos que la Complejidad es la *única* significativa: las otras pueden
+bien *ser clasificadas* como formas de complejidad o bien considerarse
+problemáticas únicamente *a causa* de la complejidad en el sistema.
+
+La complejidad es *la* causa última de la inmensa mayoría de los problemas
+relacionados con el software hoy en día. Inestabilidad, retrasos, falta de
+seguridad, a menudo hasta los problemas de rendimiento, pueden ser vistos como
+el producto de una complejidad inmanejable en estos grandes sistemas. Esta
+clasificación de la complejidad como *la* causa principal es consecuencia del
+hecho de que ser capaces de *comprender* un sistema es un pre-requisito para
+evitar todos estos problemas y es la complejidad incapacita esta comprensión.
+
+La relevancia de la complejidad es ampliamente reconocida. Como dijo Dijkstra [Dij97, EWD1243]:
+
+> "...tenemos que mantenerlo ordenado, desenmarañado y simple si queremos
+> evitar ser aplastado por las complejidades de nuestra propia obra..."
+    
+...y The Economist dedicó un artículo completo a la complejidad del software
+[Eco04] señalando que algunas estimaciones valoran en 59 miles de millones de
+dólares anuales de coste para la economía americana de los problemas
+relacionados con el software.
+
+La capacidad de pensar y razonar sobre nuestros sistemas (en particular sobre
+los efectos de los cambios que se les realicen) es de una *crucial* importancia.
+Los peligros de la complejidad y la importancia de la simplicidad han sido un tema popular en las exposiciones del premio Turing de la ACM. En su exposición de 1990, Corbato dijo [Cor91]:
+
+> "El problema general con los sistemas ambiciosos es la complejidad.",
+> "...es importante enfatizar el valor de la simplicidad y la elegancia, dado
+> que la complejidad es un camino de dificultades creciente"
+    
+En 1997, Backus [Bac78] habló sobre las "complejidades y debilidades" de los lenguajes tradiciones y apuntó que:
+
+> "hay una necesidad desesperada de una metodología poderosa que nos ayude a
+> razonar acerca de los programas. ... los lenguajes convencionales crean una
+> confusión innecesaria en nuestra forma de razonar sobre los programas"
+
+Finalmente en su discurso de aceptación del premio Turing en 1980, Hoare [Hoa81]
+hizo esta observación:
+
+> "...hay una cualidad que no puede ser comprada... y es la fiabilidad. El
+> precio de la fiabilidad es la búsqueda de la mayor simplicidad"
+
+y
+
+> "Llego a la conclusión de que hay dos formas de construir un diseño
+> software: o bien se hace algo tan simple que *obviamente* no tiene defectos
+> o bien se hace tan complicado que no hay deficiencias *obvias*. El primer
+> método es mucho más difícil."
+    
+Esta es la desafortunada realidad:
+
+    La simplicidad es *difícil*.
+    
+...pero el propósito de este artículo es dar motivos para el optimismo.
+
+Nuestro argumento final es que el tipo de complejidad del que estamos
+discutiendo en este artículo es la que hace a los grandes sistemas *difíciles de
+comprender*. Este es el motivo que nos hace consumir recursos ingentes para
+*crear y mantener* dichos sistemas. Este tipo de complejidad no tiene nada que
+ver con teoría de la complejidad (la rama de la ciencia de la computación que
+estudia los recursos consumidos *por una máquina al ejecutar* un programa).
+No tienen relación alguna: es sencillo escribir un pequeño programa de pocas
+líneas que sea increíblemente simple (en nuestro sentido) y que pertenezca a la
+mayor clase de complejidad (en el sentido de la teoría de la complejidad). De
+aquí en adelante sólo nos referiremos a complejidad del primer tipo.
+
+Debemos examinar las que consideramos como principales causes comunes de la
+complejidad (aspectos que dificultan la comprensión) después de examinar de qué
+formas tratamos de *comprender* los sistemas habitualmente.
+
 ## 3. Formas de comprender un sistema
 
 ## 4. Causas de la complejidad
