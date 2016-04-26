@@ -23,7 +23,7 @@ Identificamos las causas más comunes de la complejidad y discutimos
 aproximaciones generales para minimizar la complejidad de naturaleza
 accidental. Para hacer más concreta la exposición, se bosqueja una potencial
 aproximación a la minimización de complejidad basada en la *programación
-funcional* y en el modelo de datos relacional de Codd.
+funcional* y en el *modelo de datos relacional de Codd*.
 
 ## 1. Introducción
 
@@ -45,8 +45,8 @@ problemas cuando se aplican al diseño de grandes sistemas de forma tradicional.
 
 Defendemos que es posible tomar ideas útiles de ambas estrategias y que,
 en combinación con algunas ideas del mundo de las bases de datos relacionales,
-se puede tomar una aproximación que con un significativo potencial para
-simplificar la construcción de grandes sistemas software.
+se puede tomar una aproximación con un significativo potencial para simplificar
+la construcción de grandes sistemas software.
 
 Este artículo está dividido en dos mitades. En la primera mitad nos centramos en
 la complejidad. En la sección 2, examinamos la complejidad en general y
@@ -59,11 +59,10 @@ entendemos por "accidental" y "esencial" y después en la sección 7 damos
 recomendaciones para abordar de forma alternativa las causas de la complejidad
 (con énfasis en prevenir los problemas en lugar de afrontarlos).
 
-En la segunda mitad del artículo consideramos con más detalle un posible enfoque
-que sigue estrategia recomendada. Comenzamos con una revisión del modelo
-relacional en la sección 8 y una descripción de una potencial estrategia en la
-sección 9. En la sección 10 proveemos un breve ejemplo de cómo éste podría ser
-usado.
+En la segunda mitad del artículo detallamos un enfoque que se deriva de nuestra
+estrategia recomendada. Comenzamos con una revisión del modelo relacional en la
+sección 8 y una descripción de una potencial estrategia en la sección 9. En la
+sección 10 proveemos un breve ejemplo de cómo éste podría ser usado.
 
 Finalmente contrastamos nuestra aproximación con otras posibles en la sección 11
 y concluimos en la sección 12.
