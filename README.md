@@ -21,7 +21,7 @@ complejidad que se puede encontrar en los sistemas actuales es esencial.
 Identificamos las causas más comunes de la complejidad y discutimos
 aproximaciones generales para minimizar la complejidad de naturaleza
 accidental. Para hacer más concreta la exposición, se bosqueja una potencial
-aproximación a la minimización de complejidad basada en programación funcional
+aproximación a la minimización de complejidad basada en _programación funcional_
 y el modelo de datos relacional de Codd.
 
 ## 1. Introducción
