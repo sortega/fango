@@ -152,6 +152,37 @@ encontramos con complejidad sospechosa de no ser "inherente al problema". Ahora
 consideraremos algunas de las causas de esta complejidad.
 
 ### 4.1 Complejidad causada por el estado
+
+Cualquiera que haya llamado al servicio de soporte de algún sistema software y
+haya sido invitado a "probar de nuevo", "recargar el documento", "reiniciar el
+programa", "reiniciar el ordenador", "reinstalar el programa" o incluso
+"reinstalar el sistema operativo y después el programa" tiene experiencia de
+primera mano sobre los problemas que el *estado*[^1] produce cuando se
+intenta escribir software robusto y comprensible.
+
+[^1]: Por "estado" nos referimos específicamente a *estado mutable*. Es decir,
+    excluyendo cosas como por ejemplo las variables inmutables que sólo se
+    pueden asignar una vez y que ofrecen los lenguajes de programación lógicos.
+    
+El motivo por el que estas situaciones son familiares para tanta gente es que
+son habitualmente propuestas porque habitualmente resuelven el problema. Esto
+sucede porque muchos sistemas gestionan su estado de forma errónea. A su vez,
+estos errores son introducidos porque la existencia del propio estado hace los
+programas difíciles de *comprender*. Los hace complejos.
+
+En relación al estado, nos mostramos de acuerdo con la opinión de Brooks cuando
+afirma [Bro86]:
+
+> "De la complejidad nace la dificultad para enumerar, ni siquiera comprender,
+> todos los posibles estados del programa y de ahí nace falta de fiabilidad"
+
+Estamos de acuerdo con esto pero creemos que es la misma existencia de tantos
+posibles estados lo que en primer lugar da lugar a la complejidad, y:
+
+> "computadoras... tienen un número muy grande de estados. Esto hace que
+> concebirlos, describirlos y probarlos sea difícil. Los sistemas software
+> tienen órdenes de magnitud más estados que las propias computadoras."
+
 #### 4.1.1 Impacto del estado en las pruebas
 #### 4.1.2 Impacto del estado en el razonamiento informal
 
