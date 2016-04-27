@@ -146,6 +146,21 @@ formas tratamos de *comprender* los sistemas habitualmente.
 
 ## 4. Causas de la complejidad
 
+En cualquier sistema no trivial hay una cierta cantidad de complejidad que es
+inherente al problema a resolver. Sin embargo, en los grandes sistemas nos
+encontramos con complejidad sospechosa de no ser "inherente al problema". Ahora
+consideraremos algunas de las causas de esta complejidad.
+
+### 4.1 Complejidad causada por el estado
+#### 4.1.1 Impacto del estado en las pruebas
+#### 4.1.2 Impacto del estado en el razonamiento informal
+
+### 4.2 Complejidad causada por el control
+
+### 4.3 Complejidad causada por el volumen de código
+
+### 4.4 Otras causas de la complejidad
+
 ## 5. Aproximaciones clásicas a la gestión de la complejidad
 
 ## 6. Accidentes y esencia
