@@ -184,6 +184,50 @@ posibles estados lo que en primer lugar da lugar a la complejidad, y:
 > tienen órdenes de magnitud más estados que las propias computadoras."
 
 #### 4.1.1 Impacto del estado en las pruebas
+
+La gravedad del impacto del *estado* en las pruebas que advirtió Brooks es
+difícil de exagerar. El estado afecta a todos los tipos de pruebas, desde las
+pruebas a nivel de sistema (donde el desarrollador padece los mismos problemas
+que el desafortunado usuario que se mencionó) pasando por las de nivel de
+componente y hasta las de unidad. El principal problema es que una prueba (de
+cualquier tipo) en un sistema o componente que está en un *estado* concreto
+aporta *cero información* acerca del comportamiento del sistema o componente en
+cualquier otro *estado*.
+
+La estrategia más común para probar un sistema con estado (a nivel de componente
+o de sistema) pasa por establecer un estado "limpio" o "inicial" (no obstante
+mayormente *oculto*), realizar las pruebas utilizando unas entradas y asumir (de
+forma infundada en caso de error) que el sistema se va a comportar siempre de la
+misma forma, *independientemente de su estado interno oculto*, cada vez que se
+prueben esas entradas.
+
+Simple y llanamente, esta estrategia barre bajo la alfombra el problema del
+estado. Los motivos por los que se hace esto son, en primer lugar, que es
+posible hacer progresos con esta estrategia y, en segundo lugar, porque no hay
+otra alternativa cuando se trata de probar un sistema con un estado interno
+oculto y complicado.
+
+Por supuesto, no *siempre* es posible "hacer progresos" con esta estrategia. Si
+alguna secuencia de eventos (entradas) puede hacer que el sistema "alcance un
+estado *malo*" (específicamente un estado oculto *diferente* del que se utilizó
+durante las pruebas) la situación puede salir mal y saldrá mal. Esto es lo que
+le sucede al usuario del hipotético servicio de soporte citado al principio de
+esta sección. Las soluciones propuestas son todas intentos de forzar que el
+sistema vuelva a un "estado interno bueno".
+
+Este problema (que las pruebas en un *estado* no te dicen *nada en absoluto*
+acerca del sistema en un *estado* diferente) es completamente análogo a uno de
+los problemas discutidos antes: probar con un *conjunto de entradas* no te dice
+*nada en absoluto* sobre el comportamiento con otro *conjunto de entradas*. Sin
+embargo, el problema que causa el estado suele ser peor, especialmente cuando se
+prueban porciones grandes de un sistema, porque aunque el espacio de *entradas*
+pueda ser muy grande, el espacio de *estados* tiende a ser incluso mayor.
+
+Estos dos problemas similares, uno intrínseco al hecho de probar y el otro fruto
+del *estado*, se combinan *horrendamente*. Cada uno de ellos introduce una
+ingente cantidad de incertidumbre y por lo tanto son muy pocas las cosas que
+*podemos* dar por seguras si el sistema/componente bajo escrutinio tiene estado.
+
 #### 4.1.2 Impacto del estado en el razonamiento informal
 
 ### 4.2 Complejidad causada por el control
