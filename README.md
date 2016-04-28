@@ -1,4 +1,4 @@
-# Saliendo del pozo de brea
+# Saliendo del fango
 
 Traducción al castellano del artículo "Out of the Tar Pit"
 
@@ -463,8 +463,8 @@ En aquellos casos (como en los grandes sistemas preexistentes) donde esta
 énfasis en evitar el estado, el control explícito en la medida de lo posible y
 luchar por todos los medios de *librarse del código*.
 
-Finalmente, ¿cuál es la salida del pozo de brea? ¿Cuál es la bala de plata?
-...podría no ser el FRP pero creemos indudablemente que es la *simplicidad*.
+Finalmente, ¿cómo salir del fango? ¿Cuál es la bala de plata? ...podría no ser
+el FRP pero creemos indudablemente que es la *simplicidad*.
 
 ## Referencias
 
