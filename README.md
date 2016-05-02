@@ -144,69 +144,70 @@ formas tratamos de *comprender* los sistemas habitualmente.
 
 ## 3. Formas de comprender un sistema
 
-Defendíamos antes que el daño de la complejidad viene dado desde su impacto en
-nuestros intentos por *entender* el sistema. Debido a esto, es de útil
-considerar los mecanismos que se utilizan comúnmente para tratar entender los
-sistemas. Podremos entonces considerar más adelante el impacto que las posibles
-causas de la complejidad tienen en estos enfoques. Hay dos enfoques ampliamente
-utilizados para la compresión de los sistemas (o componentes de los sistemas):
+Defendíamos antes que el peligro de la complejidad lo trae su impacto en nuestra
+capacidad para *comprender* sistemas. Por esto, es interesante considerar los
+mecanismos que comúnmente se utilizan para tratar de comprender estos sistemas.
+A continuación, consideraremos el impacto que las posibles causas de la
+complejidad tienen en estos enfoques. Los dos enfoques más utilizados para la
+compresión de los sistemas (o componentes de los sistemas) son:
 
-- **Pruebas**. Estas tratan de entender un sistema desde fuera, como una "caja
-negra". Las conclusiones sobre el sistema se dibujan sobre la base de
-observaciones de cómo se comportan en ciertas situaciones específicas. Las
-pruebas pueden ser desempeñadas por humanos o por máquinas. El primero es más
-común para las pruebas de todo el sistema, el último es más común para las
-pruebas de componentes individuales.
-- **Razonamiento informal**. Estos tratan de comprender el sistema mediante un
-examen interno. La expectativa es que usando la información adicional
-disponible, se pueda adquirir una compresión más exacta.
+ - **Pruebas**. Estas tratan de comprender un sistema desde fuera, como una
+   "caja negra". Se determinan aspectos del sistema en base a observaciones
+   sobre su comportamiento ante determinadas situaciones. Estas pruebas pueden
+   ser desempeñadas manual o automáticamente. Lo primero es más
+   común en las pruebas del sistema al completo y lo segundo a nivel de
+   componente individual.
 
-De los dos, el razonamiento informal es el más importante con diferencia. Esto
-se debe a que, como veremos más adelante, hay límites inherentes a lo que puede
-lograrse por medio de pruebas, y por ello el razonamiento informal (en virtud de
-ser una parte inherente del proceso de desarrollo) es *siempre* usado. La otra
-justificación es que las mejoras en los razonamientos informales darán lugar a
-*menos errores cuando son creados* mientras que todas las mejoras en las pruebas
-lo que llevan a cabo es a *más errores cuando son detectados*. Como Dijkstra
-dijo en su discurso de su premio Turing [Dij72, EWD340]:
+ - **Razonamiento informal**. Se trata de intentar comprender el sistema
+   examinándolo desde dentro. Se espera que esta información adicional permita
+   llegar a una compresión más precisa.
 
-> "Los que realmente quieren software fiable descubrirán que tienen que
-> encontrar la manera de evitar la mayoría de los errores para empezar."
+De los dos, el razonamiento informal es el más importante de lejos. Esto se debe
+a que, como veremos más adelante, hay límites inherentes a lo que puede lograrse
+por medio de pruebas, y por ello el razonamiento informal (en virtud de ser una
+parte inherente del proceso de desarrollo) *siempre* se utiliza. La otra
+justificación es que un mejor razonamiento informal lleva a *introducir menos
+errores* mientras que un mejor proceso de pruebas tan solo lleva a *detectar más
+errores*. Como Dijkstra dijo en su discurso de aceptación del premio Turing
+[Dij72, EWD340]:
 
-y como O'Keefe (quien también hizo hincapié en la importancia de "*la compresión
-de su problema*" y que "*La elegancia no es opcional*") dijo [O'K90]:
+> "Aquellos que realmente quieren software fiable descubrirán que para empezar
+> tienen que encontrar cómo evitar la mayoría de los errores."
 
-> "Nuestra respuesta a los errores debería ser buscar maneras en que podamos
-> hacerlos evitar, no culpar a la naturaleza de las cosas."
+y como O'Keefe (quien también hizo hincapié en la importancia de "*comprender tu
+problema*" y que "*La elegancia no es opcional*") dijo [O'K90]:
+
+> "Nuestra respuesta a los errores debería ser buscar formas de evitarlos, no
+> culpar a la naturaleza de las cosas."
 
 El principal problema con las pruebas es que una prueba (de cualquier tipo) que
 utiliza un particular conjunto de entradas no dice *nada en absoluto* sobre
-el comportamiento del sistema o el componente cuando se le da un conjunto
-diferente de entradas. El gran número de las diferentes posibles entradas
-generalmente descarta la posibilidad de poner a todas ellas a prueba, de ahí la
-preocupación ineludible con las pruebas será siempre: *¿has realizado las
-pruebas correctas?*. La única respuesta correcta que se obtendrá a esta
-pregunta es una respuesta negativa, cuando el sistema se rompe. De nuevo, como
-Dijkstra observó [Dij71, EWD303]:
+el comportamiento del sistema o el componente cuando se le de un conjunto
+diferente de entradas. El gran número de posibles entradas diferentes
+descarta la posibilidad probar exhaustivamente en el caso general, de ahí que
+sea inevitable preguntarse al probar: *¿has probado los casos* adecuados*?*.
+Sólo se puede responder con certeza a esta pregunta en el caso negativo, cuando
+el sistema falla. De nuevo, como Dijkstra observó [Dij71, EWD303]:
 
-> "las pruebas son desesperadamente inadecuadas... pueden ser usadas muy
-> eficientemente para mostrar la presencia de errores pero nunca para mostrar
+> "las pruebas son desesperanzadoramente inadecuadas... pueden ser usadas muy
+> efectivamente para demostrar la presencia de errores pero nunca para demostrar
 > su ausencia."
 
-Estamos de acuerdo con Dijkstra. *Confiar* en pruebas es peligroso.
-Esto *no* dice que no hagamos pruebas. La conclusión es que *todas* las formas
-de intentar entender un sistema tienen sus limitaciones (y esto incluye ambos:
-*razomamiento informal*, el cual está limitado en su alcance, imprecisión y que
-por lo tanto está sujeto a errores, como el *razonamiento formal*, el cual es
-dependiente de la precisión de una especificación). Debido a estas limitaciones
-con frecuencia puede ser prudente emplear ambos, pruebas y razonamiento, juntos.
+Coincidimos con Dijkstra. *Confía* en pruebas bajo tu propia responsabilidad.
+Esto *no* quiere decir que probar no sirva para nada. La conclusión es que
+*todas* las formas de intentar comprender un sistema tienen sus limitaciones (y
+esto incluye tanto al *razonamiento informal*, limitado en su alcance, impreciso
+y por tanto propenso al error; como al *razonamiento formal*, que depende de la
+precisión de la especificación). Debido a estas limitaciones puede ser
+recomendable emplear pruebas *y* razonamiento de forma conjunta en muchas
+situaciones.
 
-Es precisamente *debido* a estas limitaciones de todas estos enfoques que la
-simplicidad es vital. Cuando se considera junto a las pruebas y el razonamiento,
-la simplicidad es más importante que cualquiera de estos dos. Dada una dura
-elección entre la inversión en las pruebas y las inversión en la simplicidad,
-este último puede con frecuencia ser la mejor opción, ya que facilitará todos
-los futuros intentos de entender el sistema, los intentos de cualquier tipo.
+Es precisamente *debido* a las limitaciones de todos estos enfoques que la
+*simplicidad* es vital. Cuando se considera junto a las pruebas y el
+razonamiento, la simplicidad es más importante que cualquiera de estos dos. Si
+se tuviese que elegir entre invertir en pruebas o en simplicidad, la segunda
+opción es con frecuencia la mejor ya que facilita *todos* los futuros intentos
+de comprender el sistema, sean del tipo que sean.
 
 ## 4. Causas de la complejidad
 
@@ -294,7 +295,7 @@ ingente cantidad de incertidumbre y por lo tanto son muy pocas las cosas que
 
 #### 4.1.2 Impacto del estado en el razonamiento informal
 
-Además de causar problemas a la hora de entender un sistema desde fuera, el
+Además de causar problemas a la hora de comprender un sistema desde fuera, el
 estado le hace la vida más difícil al desarrollador que tiene que, "desde
 dentro", intentar *razonar* (normalmente de forma forma informal) sobre el
 comportamiento esperado del sistema.
