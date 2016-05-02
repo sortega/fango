@@ -230,6 +230,40 @@ ingente cantidad de incertidumbre y por lo tanto son muy pocas las cosas que
 
 #### 4.1.2 Impacto del estado en el razonamiento informal
 
+Además de causar problemas a la hora de entender un sistema desde fuera, el
+estado le hace la vida más difícil al desarrollador que tiene que, "desde
+dentro", intentar *razonar* (normalmente de forma forma informal) sobre el
+comportamiento esperado del sistema.
+
+Los procesos mentales utilizados para este razonamiento informal suelen girar
+alrededor de una simulación mental por cada caso: "si esta variable está en este
+estado, tendremos este resultado que es correcto y en otro caso, tendremos este
+otro resultado que también lo es". Según aumenta el número de estados y por
+tanto de escenarios a considerar, la efectividad de este ejercicio mental se
+reduce tan rápido como la de las pruebas (con la ventaja de que se pueden
+abstraer conjuntos de valores similares que se tratan de forma idéntica).
+
+Uno de los problemas que afecta tanto a las pruebas como al razonamiento es la
+tasa exponencial de crecimiento del número de estados posibles. Cada nuevo *bit*
+de estado añadido *dobla* el número de estados posibles. Otro problema que
+afecta especialmente al razonamiento informal es la *contaminación*.
+
+Tomemos como ejemplo un sistema formado por procedimientos en los que algunos
+mantienen estado y otros no. Ya hemos tratado la dificultad de comprender las
+partes de un sistema que tienen estado y podríamos esperar que las demás fuesen
+más fáciles de comprender. Tristemente, no es cierto. Si un procedimiento que no
+mantiene estado utiliza a cualquier otro que si lo mantenga, *aunque sea
+indirectamente*, lo más probable es que el primero quede *contaminado* y sólo
+pueda ser entendido en el contexto de ese estado. Si intentamos ignorar ese
+estado corremos el riesgo de padecer todos los problemas detallados
+anteriormente. El problema con el estado es que *"cuando dejas que la nariz del
+camello se asome a la tienda de campaña, el resto del camello suele llegar
+detrás"*.
+
+Todos estos motivos fundamentan nuestra creencia de que la mayor causa
+individual de la complejidad en los grandes sistemas modernos es el *estado* y
+que cuanto más hagamos para *limitarlo* y *gestionarlo* mejor.
+
 ### 4.2 Complejidad causada por el control
 
 ### 4.3 Complejidad causada por el volumen de código
