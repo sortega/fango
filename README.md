@@ -144,6 +144,70 @@ formas tratamos de *comprender* los sistemas habitualmente.
 
 ## 3. Formas de comprender un sistema
 
+Defendíamos antes que el daño de la complejidad viene dado desde su impacto en
+nuestros intentos por *entender* el sistema. Debido a esto, es de útil
+considerar los mecanismos que se utilizan comúnmente para tratar entender los
+sistemas. Podremos entonces considerar más adelante el impacto que las posibles
+causas de la complejidad tienen en estos enfoques. Hay dos enfoques ampliamente
+utilizados para la compresión de los sistemas (o componentes de los sistemas):
+
+- **Pruebas**. Estas tratan de entender un sistema desde fuera, como una "caja
+negra". Las conclusiones sobre el sistema se dibujan sobre la base de
+observaciones de cómo se comportan en ciertas situaciones específicas. Las
+pruebas pueden ser desempeñadas por humanos o por máquinas. El primero es más
+común para las pruebas de todo el sistema, el último es más común para las
+pruebas de componentes individuales.
+- **Razonamiento informal**. Estos tratan de comprender el sistema mediante un
+examen interno. La expectativa es que usando la información adicional
+disponible, se pueda adquirir una compresión más exacta.
+
+De los dos, el razonamiento informal es el más importante con diferencia. Esto
+se debe a que, como veremos más adelante, hay límites inherentes a lo que puede
+lograrse por medio de pruebas, y por ello el razonamiento informal (en virtud de
+ser una parte inherente del proceso de desarrollo) es *siempre* usado. La otra
+justificación es que las mejoras en los razonamientos informales darán lugar a
+*menos errores cuando son creados* mientras que todas las mejoras en las pruebas
+lo que llevan a cabo es a *más errores cuando son detectados*. Como Dijkstra
+dijo en su discurso de su premio Turing [Dij72, EWD340]:
+
+> "Los que realmente quieren software fiable descubrirán que tienen que
+> encontrar la manera de evitar la mayoría de los errores para empezar."
+
+y como O'Keefe (quien también hizo hincapié en la importancia de "*la compresión
+de su problema*" y que "*La elegancia no es opcional*") dijo [O'K90]:
+
+> "Nuestra respuesta a los errores debería ser buscar maneras en que podamos
+> hacerlos evitar, no culpar a la naturaleza de las cosas."
+
+El principal problema con las pruebas es que una prueba (de cualquier tipo) que
+utiliza un particular conjunto de entradas no dice *nada en absoluto* sobre
+el comportamiento del sistema o el componente cuando se le da un conjunto
+diferente de entradas. El gran número de las diferentes posibles entradas
+generalmente descarta la posibilidad de poner a todas ellas a prueba, de ahí la
+preocupación ineludible con las pruebas será siempre: *¿has realizado las
+pruebas correctas?*. La única respuesta correcta que se obtendrá a esta
+pregunta es una respuesta negativa, cuando el sistema se rompe. De nuevo, como
+Dijkstra observó [Dij71, EWD303]:
+
+> "las pruebas son desesperadamente inadecuadas... pueden ser usadas muy
+> eficientemente para mostrar la presencia de errores pero nunca para mostrar
+> su ausencia."
+
+Estamos de acuerdo con Dijkstra. *Confiar* en pruebas es peligroso.
+Esto *no* dice que no hagamos pruebas. La conclusión es que *todas* las formas
+de intentar entender un sistema tienen sus limitaciones (y esto incluye ambos:
+*razomamiento informal*, el cual está limitado en su alcance, imprecisión y que
+por lo tanto está sujeto a errores, como el *razonamiento formal*, el cual es
+dependiente de la precisión de una especificación). Debido a estas limitaciones
+con frecuencia puede ser prudente emplear ambos, pruebas y razonamiento, juntos.
+
+Es precisamente *debido* a estas limitaciones de todas estos enfoques que la
+simplicidad es vital. Cuando se considera junto a las pruebas y el razonamiento,
+la simplicidad es más importante que cualquiera de estos dos. Dada una dura
+elección entre la inversión en las pruebas y las inversión en la simplicidad,
+este último puede con frecuencia ser la mejor opción, ya que facilitará todos
+los futuros intentos de entender el sistema, los intentos de cualquier tipo.
+
 ## 4. Causas de la complejidad
 
 En cualquier sistema no trivial hay una cierta cantidad de complejidad que es
