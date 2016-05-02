@@ -224,7 +224,7 @@ prueban porciones grandes de un sistema, porque aunque el espacio de *entradas*
 pueda ser muy grande, el espacio de *estados* tiende a ser incluso mayor.
 
 Estos dos problemas similares, uno intrínseco al hecho de probar y el otro fruto
-del *estado*, se combinan *horrendamente*. Cada uno de ellos introduce una
+del *estado*, se combinan *horriblemente*. Cada uno de ellos introduce una
 ingente cantidad de incertidumbre y por lo tanto son muy pocas las cosas que
 *podemos* dar por seguras si el sistema/componente bajo escrutinio tiene estado.
 
