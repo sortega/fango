@@ -82,7 +82,7 @@ seguridad, a menudo hasta los problemas de rendimiento, pueden ser vistos como
 el producto de una complejidad inmanejable en estos grandes sistemas. Esta
 clasificación de la complejidad como *la* causa principal es consecuencia del
 hecho de que ser capaces de *comprender* un sistema es un pre-requisito para
-evitar todos estos problemas y es la complejidad incapacita esta comprensión.
+evitar todos estos problemas y la complejidad incapacita esta comprensión.
 
 La relevancia de la complejidad es ampliamente reconocida. Como dijo Dijkstra [Dij97, EWD1243]:
 
@@ -123,7 +123,7 @@ y
     
 Esta es la desafortunada realidad:
 
-    La simplicidad es *difícil*.
+> La simplicidad es *difícil*.
     
 ...pero el propósito de este artículo es dar motivos para el optimismo.
 
@@ -138,7 +138,7 @@ líneas que sea increíblemente simple (en nuestro sentido) y que pertenezca a l
 mayor clase de complejidad (en el sentido de la teoría de la complejidad). De
 aquí en adelante sólo nos referiremos a complejidad del primer tipo.
 
-Debemos examinar las que consideramos como principales causes comunes de la
+Debemos examinar las que consideramos como principales causas comunes de la
 complejidad (aspectos que dificultan la comprensión) después de examinar de qué
 formas tratamos de *comprender* los sistemas habitualmente.
 
