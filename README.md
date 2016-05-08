@@ -460,6 +460,48 @@ respecto al volumen de código.
 
 ### 4.4 Otras causas de la complejidad
 
+Para concluir, existen otras causas para la complejidad como por ejemplo: código
+duplicado, código que nunca llega a ejercitarse ("código muerto"), **abstracción
+innecesaria**[^3], oportunidades para abstraer no aprovechadas, modularización
+deficiente, documentación de baja calidad...
+
+[^3]: Particularmente abstracción de datos innecesaria. Argumentaremos que esto pasa con la *mayoría* de la abstracción de datos en la sección 9.2.4.
+
+Todas estas otras causas son el resultado de estos tres interrelacionados
+principios:
+
+ - **La complejidad crea más complejidad.** Hay un variado conjunto de causas
+   *secundarias* de complejidad. Esto incluye toda la complejidad que se
+   introduce *como resultado* de no ser capaz de comprender con claridad el
+   sistema. La *duplicación* es un ejemplo prototípico de esto: si debido al
+   estado, control o volumen del código no está claro si una funcionalidad
+   existente hace exactamente lo que se requiere para otros casos habrá una
+   fuerte tendencia a duplicarla. Esto es aún más cierto cuando hay presiones
+   temporales.
+   
+  - **La simplicidad es *difícil*.** Como se indicó anteriormente, es necesario
+    un esfuerzo significativo para alcanzar la simplicidad. La primera solución
+    que se prueba no suele ser la más simple, especialmente si hay complejidades
+    preexistentes o presiones temporales. La simplicidad sólo se puede conseguir
+    si se admite este hecho y por ésta es buscada y apreciada.
+  
+  - **El poder corrompe.** A lo que nos referimos es que, si no hay garantías a
+    nivel del lenguaje de programación (i.e. restricciones a las *capacidades o
+    poderes* que el lenguaje ofrece) *se producirán* errores (y abusos). Por
+    este motivo los recolectores de basura son buenos ya que el *poder* de
+    gestionar manualmente la memoria es eliminado. El mismo principio es
+    relevante para el *estado*, otro tipo de poder o capacidad. A este respecto
+    tenemos que ser muy cuidadosos con cualquier lenguaje que *permita* tener
+    estado, independientemente de cuánto desincentive su uso (ML y Scheme son
+    ejemplos obvios). La conclusión es que cuanto más *poderoso* es un lenguaje
+    (i.e. cuantas más cosas es *posible* expresar con el mismo), más difícil es
+    *comprender* los sistemas construidos con ese lenguaje.
+    
+Algunas de estas causas son de naturaleza humana, otras son ambientales pero
+todas pueden, en nuestra opinión, ser aliviadas en gran medida si se hace
+énfasis en la gestión efectiva de las causas de la complejidad tratadas en las
+secciones 4.1 a 4.3.
+
 ## 5. Aproximaciones clásicas a la gestión de la complejidad
 
 ## 6. Accidentes y esencia
