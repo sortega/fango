@@ -329,7 +329,91 @@ Todos estos motivos fundamentan nuestra creencia de que la mayor causa
 individual de la complejidad en los grandes sistemas modernos es el *estado* y
 que cuanto más hagamos para *limitarlo* y *gestionarlo* mejor.
 
-### 4.2 Complejidad causada por el control
+### 4.2 Complejidad causada por el flujo de control
+
+De forma cruda, el flujo de control o simplemente control se trata del *orden*
+en el que se suceden los acontecimientos.
+
+El problema con este control es que, con frecuencia, nos gustaría
+despreocuparnos del mismo. Obviamente, dado que queremos construir un sistema
+real en el que efectivamente *pasen* cosas, en algún momento el orden será
+relevante para alguien, pero corremos un riesgo significativo de ocuparnos de
+este tema innecesariamente.
+
+La mayoría de lenguajes de programación tradicionales *fuerzan* a preocuparse
+por el orden y en la mayoría de los casos el orden en el que las cosas *suceden*
+es el mismo en el que se hayan escrito las sentencias en el texto del programa.
+Este orden se ve modificado por instrucciones de explícitas de control (que
+pueden ser condicionales) y por la existencia de subrutinas que se invocan
+formando una pila implícita.
+
+Es obvio que múltiples órdenes de evaluación son posibles pero sin embargo
+existe muy poca variedad al respecto entre los lenguajes más extendidos.
+
+Cuando el control es un aspecto implícito del lenguaje (como casi siempre es)
+surge la dificultad de que cada parte del programa debe ser comprendido dentro
+de ese contexto, incluso cuando el programador nunca quiso especificar un orden.
+Cuando un programador es obligado (al usar un lenguaje con flujo de control
+implícito) a especificar el control, se le obliga a especificar *cómo* debe
+funcionar el sistema en lugar de simplemente *qué* se desea que haga. El
+resultado es la obligación de *sobre especificar* el problema. Consideremos el
+siguiente pseudo-código:
+
+    a := b + 3
+    c := d + 2
+    e := f * 4
+    
+En este caso es claro que el programador es indiferente con respecto al orden
+(i.e. *cómo*) en el que se ejecuten. Lo único que le interesa es la *relación*
+entre ciertos valores pero además de esto ha sido obligado a especificar un
+flujo de control arbitrario. Con frecuencia, en casos como éste, el compilador
+llega al extremo de tener que analizar si este orden (que sólo ha sido
+especificado por la semántica del lenguaje) puede ser ignorado con seguridad.
+
+En casos simples como el anterior se le da poca importancia a este problema pero
+es importante darse cuenta de los dos innecesarios procesos que se dan: primero
+se obliga a determinar un orden artificial y luego se hace trabajo adicional
+para eliminarlo.
+
+Este asunto, aparentemente inocuo, puede complicar el proceso razonamiento
+informal de forma realmente significativa. Esto es porque la persona que lee el
+código anterior debe reproducir el trabajo que haría el hipotético compilado.
+Debe empezar (debido a la semántica del lenguaje) asumiendo que el orden *es*
+significativo para luego analizar si realmente lo era (en casos menos triviales
+que el anterior esto puede ser muy difícil). Esto es problemático porque los
+errores de juicio haciendo este análisis pueden llevar a introducir errores muy
+sutiles y difíciles de encontrar.
+
+Es importante recalcar que el problema no está en el propio *texto* del programa
+anterior ya que siempre habrá que escribirlo en algún orden. Éste se debe
+únicamente a la *semántica* del hipotético lenguaje imperativo que hemos
+asumido. Es *posible* imaginar este mismo fragmento de código ser válido en un
+lenguaje de programación cuya semántica no defina el orden en tiempo de
+ejecución mediante el orden en el texto del programa[^2].
+
+[^2]: De hecho las primeras versiones del lenguaje Oz (con concurrencia *implícita* a nivel de sentencia) seguían un modelo similar [vRH04, p809].
+
+Tras considerar el impacto del control en el *razonamiento informal* ahora
+trataremos otro problema asociado al control, la concurrencia, que afecta
+también al proceso de *pruebas*.
+
+Al igual que las estructuras de control básicas como los condicionales y a
+diferencia de orden implícito dato a las sentencias, la concurrencia es
+típicamente especificada de forma *explícita* en la mayoría de lenguajes. El
+modelo más común es el de "concurrencia con estado compartido" en el que se debe
+especificar explícitamente aspectos de sincronización. El impacto que esto tiene
+en la capacidad de razonar informalmente es bien conocido. Según aumenta el
+*número de escenarios* que deben ser considerados mentalmente al leer el
+programa va aumentando la dificultad para razonar. Cómo se mencionó
+anteriormente, este problema es similar al que provoca el propio estado
+aumentando el número de escenarios a considerar.
+
+La concurrencia también tiene impacto en las pruebas ya que se pierde la
+capacidad de obtener el mismo resultado al repetir las pruebas aunque se
+garantice un estado inicial consistente. Ejecutar una prueba bajo condiciones de
+concurrencia *no aporta información* sobre qué pasará en la siguiente ejecución
+de la misma prueba, las mismas entradas y el mismo estado inicial... No se puede
+llegar a una situación peor.
 
 ### 4.3 Complejidad causada por el volumen de código
 
