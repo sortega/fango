@@ -417,6 +417,47 @@ llegar a una situación peor.
 
 ### 4.3 Complejidad causada por el volumen de código
 
+La última causa de la complejidad que vamos a examinar en detalle el propio
+volumen de código.
+
+En muchos sentidos es un efecto secundario ya que mucho código está dedicado a
+gestionar *estado* o a especificar el *flujo de control*. Por este motivo
+omitimos con frecuencia el volumen de código en el resto del análisis. Sin
+embargo hay dos buenos motivos para considerarlo de forma independiente: primero
+porque es la forma de complejidad más fácil de *medir* y segundo porque
+interactúa negativamente con las otras causas de la complejidad.
+
+Brooks advirtió en [Bro86]:
+
+> "Muchos de los problemas clásicos para desarrollar productos software derivan
+> de esta complejidad esencial y su crecimiento no linear con respecto a su
+> tamaño"
+
+A grandes trazos, estamos de acuerdo en que *en la mayoría de sistemas actuales*
+esto es cierto (discrepamos en el uso de la palabra "esencial" como ya se dijo).
+Es decir, en la mayoría de los sistemas la complejidad *muestra* un incremento
+no linear con respecto a su tamaño (en volumen de código). A su vez, esta falta
+de linealidad significa que es vital reducir la cantidad de código a su mínima
+expresión.
+
+También queremos recalcar la siguiente idea de Dijkstra [Dij72, EWD340] al
+respecto de este tema:
+
+> "Se ha sugerido que hay una especie de ley de la naturaleza por la que la
+> cantidad de trabajo intelectual necesario es proporcional al cuadrado de la
+> longitud del programa. Pero, afortunadamente, nadie ha sido capaz de probar
+> esta ley. Y esto es porque no tiene por qué ser cierta. ... Tiendo a asumir,
+> y de momento no he sido corregido por la experiencia, que aplicando
+> adecuadamente nuestra capacidad de abstracción, el trabajo intelectual para
+> concebir o para comprender un programa no tiene por qué crecer más que
+> proporcionalmente a la longitud del código."
+
+Estamos completamente de acuerdo con esto y es la razón de nuestra matización
+anterior ("en la mayoría de sistemas actuales"). Creemos que mediante la gestión
+efectiva de las dos principales causas de la complejidad, estado y control, es
+mucho menos claro que la complejidad tenga que crecer de forma no lineal con
+respecto al volumen de código.
+
 ### 4.4 Otras causas de la complejidad
 
 ## 5. Aproximaciones clásicas a la gestión de la complejidad
