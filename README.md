@@ -504,6 +504,31 @@ secciones 4.1 a 4.3.
 
 ## 5. Aproximaciones clásicas a la gestión de la complejidad
 
+Una buena forma de comprender las diferentes aproximaciones clásicas a la
+gestión de la complejidad es examinar la propuesta de los lenguajes de
+programación pertenecientes a los tres principales estilos (imperativo,
+funcional y lógico). Tomaremos la aproximación orientada a objetos como un
+ejemplo representativo del estilo imperativo.
+
+### 5.1 Orientación a objetos
+#### 5.1.1 Estado
+##### Identidad y estado
+##### Estado en la programación orientada a objetos
+#### 5.1.2 Control
+#### 5.1.3 Resumen
+
+### 5.2 Programación funcional
+#### 5.2.1 Estado
+#### 5.2.2 Control
+#### 5.2.3 Tipos de estado
+#### 5.2.4 Estado y modularidad
+#### 5.2.5 Resumen
+
+### 5.3 Programación lógica
+#### 5.3.1 Estado
+#### 5.3.2 Control
+#### 5.3.3 Resumen
+
 ## 6. Accidentes y esencia
 
 ## 7. Recomendaciones generales
