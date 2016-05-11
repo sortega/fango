@@ -511,9 +511,44 @@ funcional y lógico). Tomaremos la aproximación orientada a objetos como un
 ejemplo representativo del estilo imperativo.
 
 ### 5.1 Orientación a objetos
+
+La orientación a objetos es esencialmente una aproximación imperativa a pesar de
+ser un término muy amplio que cubre lenguajes basados en clases al estilo de
+Java hasta lenguajes basados en prototipos al estilo de Self y desde lenguajes
+con single-dispatch hasta lenguajes con multiple dispatch como CLOS y desde los
+tradicionales objetos pasivos hasta los objetos activo o actores. Ésta ha
+evolucionado hasta llegar a ser la forma predominante en la que se desarrolla el
+software en computadores tradicionales (de arquitectura von-Neumann) y muchas de
+sus características surgen de facilitar el estilo von-Neumann, es decir,
+computaciones basadas en estado.
+
 #### 5.1.1 Estado
+
+En la mayoría de sus formas, en la programación orientada a objetos (POO), un
+objeto consiste en algo de estado y una serie de procedimientos para acceder y
+manipular ese estado.
+
+Esto es esencialmente equivalente a la (anterior) idea de *tipo abstracto de
+datos* (TAD) y es uno de los puntos fuertes de la POO cuando se compara con
+otras aproximaciones imperativas menos estructuradas. En el contexto de la POO
+esto es conocido como *encapsulación* y permite al programador garantizar
+restricciones de integridad sobre el estado de un objeto al regular el acceso al
+estado mediante procedimientos de acceso ("métodos").
+
+Un problema con este esquema es que, si varios procedimientos acceden o
+manipulan la misma porción de estado, habrá varios puntos donde la integridad
+debe ser garantizada. Estos procedimientos pueden estar o no en el mismo fichero
+dependiendo del lenguaje y de qué características, como la herencia, se están
+usando. Otro gran problema[^4] es que las garantías basadas en restricciones
+garantizadas mediante encapsulación está muy sesgada hacia restricciones a nivel
+de un único objeto y es difícil garantizar restricciones más complicadas que
+involucren a varios objetos (para empezar no está claro dónde deben residir
+estas restricciones).
+
 ##### Identidad y estado
+
 ##### Estado en la programación orientada a objetos
+
 #### 5.1.2 Control
 #### 5.1.3 Resumen
 
