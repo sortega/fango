@@ -230,7 +230,7 @@ intenta escribir software robusto y comprensible.
     pueden asignar una vez y que ofrecen los lenguajes de programación lógicos.
     
 El motivo por el que estas situaciones son familiares para tanta gente es que
-son habitualmente propuestas porque habitualmente resuelven el problema. Esto
+son habitualmente propuestas porque normalmente resuelven el problema. Esto
 sucede porque muchos sistemas gestionan su estado de forma errónea. A su vez,
 estos errores son introducidos porque la existencia del propio estado hace los
 programas difíciles de *comprender*. Los hace complejos.
@@ -241,8 +241,8 @@ afirma [Bro86]:
 > "De la complejidad nace la dificultad para enumerar, ni siquiera comprender,
 > todos los posibles estados del programa y de ahí nace falta de fiabilidad"
 
-Estamos de acuerdo con esto pero creemos que es la misma existencia de tantos
-posibles estados lo que en primer lugar da lugar a la complejidad, y:
+Estamos de acuerdo con esto pero creemos que es la mera existencia de tantos
+posibles estados lo que en primer lugar produce complejidad, y:
 
 > "computadoras... tienen un número muy grande de estados. Esto hace que
 > concebirlos, describirlos y probarlos sea difícil. Los sistemas software
@@ -297,7 +297,7 @@ ingente cantidad de incertidumbre y por lo tanto son muy pocas las cosas que
 
 Además de causar problemas a la hora de comprender un sistema desde fuera, el
 estado le hace la vida más difícil al desarrollador que tiene que, "desde
-dentro", intentar *razonar* (normalmente de forma forma informal) sobre el
+dentro", intentar *razonar* (normalmente de forma informal) sobre el
 comportamiento esperado del sistema.
 
 Los procesos mentales utilizados para este razonamiento informal suelen girar
