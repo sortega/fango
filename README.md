@@ -375,7 +375,7 @@ es importante darse cuenta de los dos innecesarios procesos que se dan: primero
 se obliga a determinar un orden artificial y luego se hace trabajo adicional
 para eliminarlo.
 
-Este asunto, aparentemente inocuo, puede complicar el proceso razonamiento
+Este asunto, aparentemente inocuo, puede complicar el proceso de razonamiento
 informal de forma realmente significativa. Esto es porque la persona que lee el
 código anterior debe reproducir el trabajo que haría el hipotético compilado.
 Debe empezar (debido a la semántica del lenguaje) asumiendo que el orden *es*
@@ -385,11 +385,11 @@ errores de juicio haciendo este análisis pueden llevar a introducir errores muy
 sutiles y difíciles de encontrar.
 
 Es importante recalcar que el problema no está en el propio *texto* del programa
-anterior ya que siempre habrá que escribirlo en algún orden. Éste se debe
-únicamente a la *semántica* del hipotético lenguaje imperativo que hemos
-asumido. Es *posible* imaginar este mismo fragmento de código ser válido en un
-lenguaje de programación cuya semántica no defina el orden en tiempo de
-ejecución mediante el orden en el texto del programa[^2].
+anterior, que debe ser escrito en algún orden. El problema es causado por la
+*semántica* del hipotético lenguaje imperativo que hemos tomado como ejemplo. Es
+*posible* imaginar este mismo fragmento de código como válido en un lenguaje de
+programación cuya semántica no defina el orden en tiempo de ejecución mediante
+el orden en el texto del programa[^2].
 
 [^2]: De hecho las primeras versiones del lenguaje Oz (con concurrencia *implícita* a nivel de sentencia) seguían un modelo similar [vRH04, p809].
 
@@ -398,7 +398,7 @@ trataremos otro problema asociado al control, la concurrencia, que afecta
 también al proceso de *pruebas*.
 
 Al igual que las estructuras de control básicas como los condicionales y a
-diferencia de orden implícito dato a las sentencias, la concurrencia es
+diferencia de orden implícito dado a las sentencias, la concurrencia es
 típicamente especificada de forma *explícita* en la mayoría de lenguajes. El
 modelo más común es el de "concurrencia con estado compartido" en el que se debe
 especificar explícitamente aspectos de sincronización. El impacto que esto tiene
@@ -417,7 +417,7 @@ llegar a una situación peor.
 
 ### 4.3 Complejidad causada por el volumen de código
 
-La última causa de la complejidad que vamos a examinar en detalle el propio
+La última causa de la complejidad que vamos a examinar en detalle es el propio
 volumen de código.
 
 En muchos sentidos es un efecto secundario ya que mucho código está dedicado a
@@ -540,9 +540,9 @@ manipulan la misma porción de estado, habrá varios puntos donde la integridad
 debe ser garantizada. Estos procedimientos pueden estar o no en el mismo fichero
 dependiendo del lenguaje y de qué características, como la herencia, se están
 usando. Otro gran problema[^4] es que las garantías basadas en restricciones
-garantizadas mediante encapsulación está muy sesgada hacia restricciones a nivel
-de un único objeto y es difícil garantizar restricciones más complicadas que
-involucren a varios objetos (para empezar no está claro dónde deben residir
+garantizadas mediante encapsulación están muy sesgadas hacia restricciones a
+nivel de un único objeto y es difícil garantizar restricciones más complicadas
+que involucren a varios objetos (para empezar no está claro dónde deben residir
 estas restricciones).
 
 ##### Identidad y estado
@@ -550,19 +550,19 @@ estas restricciones).
 ##### Estado en la programación orientada a objetos
 
 #### 5.1.2 Control
-#### 5.1.3 Resumen
+#### 5.1.3 POO: resumen
 
 ### 5.2 Programación funcional
 #### 5.2.1 Estado
 #### 5.2.2 Control
 #### 5.2.3 Tipos de estado
 #### 5.2.4 Estado y modularidad
-#### 5.2.5 Resumen
+#### 5.2.5 Programación funcional: resumen
 
 ### 5.3 Programación lógica
 #### 5.3.1 Estado
 #### 5.3.2 Control
-#### 5.3.3 Resumen
+#### 5.3.3 Programación lógica: resumen
 
 ## 6. Accidentes y esencia
 
