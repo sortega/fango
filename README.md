@@ -545,7 +545,28 @@ nivel de un único objeto y es difícil garantizar restricciones más complicada
 que involucren a varios objetos (para empezar no está claro dónde deben residir
 estas restricciones).
 
+[^4]: Este problema en particular no aplica a los lenguajes orientados a objetos que se basan en funciones genéricas (como CLOS) ya que no comparten el mismo concepto de encapsulación.
+
 ##### Identidad y estado
+
+Otro aspecto intrínseco a la POO que está íntimamente relacionado con el estado
+es el concepto de *identidad del objeto*.
+
+En la POO, cada objeto es una entidad únicamente identificable sin importar el
+valor de sus atributos. Esto se denomina como identidad *intensiva*[^nt1] (en
+contraste con la identidad *extensiva* en la que la igualdad se basa en si los
+atributos coinciden). Citando a Baker [Bak93]:
+
+[^nt1]: N.T. *intensional identity* en el original.
+
+> En cierto sentido, dar identidad a los objetos puede considerarse como
+> rechazar el punto de vista del "álgebra relacional" en el que dos objetos sólo
+> pueden ser distinguidos si sus atributos difieren.
+
+Dar esta identidad a los objetos *tiene* sentido cuando son utilizados para
+crear una abstracción con estado (mutable). Esto es así porque dos objetos
+distintos pueden ser modificados para contener diferente estado incluso si sus
+atributos (el estado que contienen) eran inicialmente idénticos.
 
 ##### Estado en la programación orientada a objetos
 
