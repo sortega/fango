@@ -568,6 +568,24 @@ crear una abstracción con estado (mutable). Esto es así porque dos objetos
 distintos pueden ser modificados para contener diferente estado incluso si sus
 atributos (el estado que contienen) eran inicialmente idénticos.
 
+Sin embargo, cuando no se necesita mutabilidad (como por ejemplo al representar
+un simple valor numérico), la aproximación orientada a objetos se ve forzada a
+adoptar técnicas como la creación de "objetos valor" dónde se intenta subvertir
+la *identidad del objeto* y re-introducir la identidad extensiva. En estos casos
+es común recurrir a procedimientos de acceso (métodos) para determinar si dos
+objetos son equivalentes de una forma alternativa y específica del dominio. Un
+riesgo, a parte del volumen adicional de código para soportar esto, es la falta
+de garantías de que la equivalencia específica del dominio sea conforme al
+concepto estándar de relación de equivalencia (por ejemplo no tiene por qué
+garantizarse la transitividad).
+
+El concepto de *identidad del objeto* es intrínseco al uso de estado y es, por
+formar parte del propio paradigma, inevitable. Este concepto adicional de
+identidad añade complejidad a la tarea de razonar sobre los sistemas
+desarrollados en el estilo orientado a objetos (es necesario alternar
+mentalmente entre ambos conceptos de equivalencia y confundirlos puede producir
+graves errores).
+
 ##### Estado en la programación orientada a objetos
 
 #### 5.1.2 Control
