@@ -605,21 +605,21 @@ graves errores).
 
 ## 6. Accidentes y esencia
 
-Brooks considera como dificultades "principales" las inherentes a la naturaleza
+Brooks considera como dificultades "esenciales" las inherentes a la naturaleza
 del software y el resto las clasifica como "accidentales".
 
-Normalmente usaremos los términos en el mismo sentido, pero preferimos comenzar
-considerando a la complejidad del problema en sí misma incluso antes de haber
-introducido al software en el contexto. Es por ello que definimos los siguientes
-dos tipos de complejidad:
+Normalmente usaremos los términos con el mismo signicado, pero preferimos
+comenzar considerando a la complejidad del problema en sí misma incluso antes de
+haber introducido al software en el contexto. Es por ello que definimos los
+siguientes dos tipos de complejidad:
 
-- **Complejidad Esencial** es inherente y la esencial del *problema* (como se
+- **Complejidad esencial** es inherente y la esencial del *problema* (como se
   percibe por los usuarios).
 
-- La **Complejidad accidental** es todo lo demás, la complejidad con la que el
-  equipo de desarrollo no tendría que luchar en el mundo ideal (e.g. complejidad
-  derivada de los problemas de rendimiento y lenguajes suboptimos e
-  infrastructura)
+- **Complejidad accidental** es todo lo demás, la complejidad con la que el
+  equipo de desarrollo no tendría que luchar en un mundo ideal (e.g. complejidad
+  derivada de los problemas de rendimiento, lenguajes suboptimos e
+  infrastructura).
 
 ## 7. Recomendaciones generales
 
