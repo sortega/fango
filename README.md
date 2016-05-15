@@ -636,7 +636,7 @@ finalmente daremos algunas recomendaciones.
 
 A pesar de sus orígenes, el modelo relacional [Cod70] *en si mismo* no tiene
 nada que ver con bases de datos. No es más que una forma elegante de
-*estructurar* datos, una forma de *manipular* los mismos y  un mecanismo para
+*estructurar* datos, una forma de *manipular* los mismos y un mecanismo para
 mantener estado *íntegro* y consistente. Estas características son aplicables
 a estado y datos en cualquier contexto.
 
@@ -645,7 +645,7 @@ punto fuerte del modelo relacional es el énfasis en tener una marcada
 separación entre la capa lógica y física del sistema. Esto se traduce en que
 el diseño del modelo lógico (minimizando la complejidad) es atacado de forma
 separada del diseño del modelo de almacenamiento físico y de la correspondencia
-entre ambos[^15]. Este principio de denomina *independencia de datos* y es una
+entre ambos[^15]. Este principio se denomina *independencia de datos* y es una
 parte crucial del modelo relacional [Cod70, section 1.1].
 
 [^15]: Desafortunadamente la mayoría de sistemas gestores de bases de datos
