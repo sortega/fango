@@ -617,6 +617,54 @@ esencial). A continuación veremos cómo de realista es este mundo ideal y
 finalmente daremos algunas recomendaciones.
 
 ### 7.1 Mundo ideal
+
+En un mundo ideal no estamos interesados en el rendimiento,o si nuestro lenguaje
+e infrastructura nos proveé todo el soporte que deseamos. Es en ese contexto
+donde vamos a examinar el estado y el control. En concreto, vamos a identificar
+el estado como estado accidental, si podemos omitirlo en este mundo ideal, y lo
+mismo realizaremos para el control.
+
+Incluso en un mundo ideal necesitamos empezar por alguna parte, y parece
+razonable suponer que tenemos que comenzar con una serie de *requisitos
+informales* de los potenciales usuarios.
+
+Nuestra siguiente observación es que debido a que en última instancia,
+necesitamos que algo *suceda*, i.e., vamos a necesitar tener nuestro sistema de
+procesado mecánico (en nuestro ordenador), necesitaremos *formalizar*.
+Vamos a necesitar derivar los requisitos formales de los informales.
+
+Entonces, en resumen, esto significa que incluso en un mundo ideal tenemos:
+
+>Requisitos informales -> Requisitos formales
+
+Tenga en cuenta que estamos buscando una mayor simplicidad, es crucial que la
+formalización se haga sin añadir ningún tipo de aspecto *accidental* en
+absoluto. En concreto, esto significa que en un mundo ideal, la formalización
+debe hacerse *sin vistas a la ejecución de ningún tipo*. La única preocupación
+cuando se realizan los requisitos formales debe ser garantizar que no hay
+ambigüedad *relevante*[^6] en los requisitos informales (i.e. que no existen
+omisiones).
+
+[^6]: Incluimos la palabra "relevante" aquí porque en muchos casos, puede haber muchas soluciones posibles que sean aceptadas, y en tales casos, los requisitos pueden ser ambiguos en este sentido, sin embargo, eso no se considera que sea una ambigüedad "relevante", i.e., no lo hace corresponder a una *omisión* errónea de los requisitos.
+
+Así, después de haber elaborado los requisitos formales, ¿Cuál debería ser el
+siguiente paso a realizar? Dado que estamos considerando un mundo ideal, no es
+razonable asumir que el siguiente paso es simplemente *ejecutar* estos
+requisitos de forma directa en nuestra infrastructura de uso general
+subyacente.[^7]
+
+[^7]: En presencia de ambigüedades *irrelevantes* esto significará que la infrastructura debe *elegir* una de las posibilidades, o tal vez incluso proporcionar todas las soluciones posibles.
+
+Esta situación es la simplicidad *absoluta*, no parece concebible que podamos
+realizar nada mejor que esto, incluso en un mundo ideal.
+
+Es interesante observar que efectivamente lo que acabamos de describir es, en
+efecto, la verdadera *esencia* de la *programación declarativa*, i.e., que sólo
+es necesario especificar *qué* se requiere, no *cómo* debe ser logrado.
+
+Ahora vamos a considerar las implicaciones de este enfoque "ideal" para los
+tipos complejidad discutidos anteriormente.
+
 #### 7.1.1 Estado en el mundo ideal
 #### 7.1.2 Control en el mundo ideal
 #### 7.1.3 Resumen
