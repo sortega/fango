@@ -895,7 +895,7 @@ el FRP pero creemos indudablemente que es la *simplicidad*.
   Essays on Software Engineering, Anniversary Edition, Chapter 16,
   Addison-Wesley, 1995.
 
-- [Che76] P. P. Chen. The Entity-Relationship Model. *ACM Trans. on Database
+- [Che76] P. P. Chen. "The Entity-Relationship Model". *ACM Trans. on Database
   Systems (TODS)*, 1:9–36, 1976.
 
 - [Cod70] E. F. Codd. A relational model of data for large shared data banks.
@@ -930,7 +930,7 @@ el FRP pero creemos indudablemente que es la *simplicidad*.
 
 - [EH97] Conal Elliott and Paul Hudak. Functional reactive animation. In
   *Proceedings of the ACM SIGPLAN International Conference on Functional
-  Programming (ICFP-97)*, volume 32,8 of ACM SIGPLAN Notices, pages 263–273,
+  Programming (ICFP-97)*, volume 32,8 of *ACM SIGPLAN Notices*, pages 263–273,
   New York, June 9–11 1997. ACM Press.
 
 - [HJ89] I. Hayes and C. Jones. Specifications are not (necessarily) executable.
@@ -951,7 +951,7 @@ el FRP pero creemos indudablemente que es la *simplicidad*.
 
 - [OB88] A. Ohori and P. Buneman. Type inference in a database programming
   language. In *Proceedings of the 1988 ACM Conference on LISP and Functional
-  Programming*, Snowbird, UT, pages 174–183, New York, NY, 1988. ACM.
+  Programming, Snowbird, UT*, pages 174–183, New York, NY, 1988. ACM.
 
 - [O’K90] Richard A. O’Keefe. *The Craft of Prolog*. The MIT Press, Cambridge,
   1990.
@@ -960,7 +960,7 @@ el FRP pero creemos indudablemente que es la *simplicidad*.
   Libraries, the Revised Report*. CUP, April 2003.
 
 - [SS94] Leon Sterling and Ehud Y. Shapiro. *The Art of Prolog - Advanced
-  Programming Techniques*, 2nd Ed. MIT Press, 1994.
+  Programming Techniques, 2nd Ed.* MIT Press, 1994.
 
 - [SU96] Randall B. Smith and David Ungar. A simple and unifying approach to
   subjective objects. TAPOS, 2(3):161–178, 1996.
@@ -968,7 +968,7 @@ el FRP pero creemos indudablemente que es la *simplicidad*.
 - [vRH04] Peter van Roy and Seif Haridi. *Concepts, Techniques, and Models of
   Computer Programming*. MIT Press, 2004.
 
-- [Wad95] Philip Wadler. Monads for functional programming. *In Advanced
+- [Wad95] Philip Wadler. Monads for functional programming. In *Advanced
   Functional Programming*, pages 24–52, 1995.
 
 - [Won00] Limsoon Wong. Kleisli, a functional query system. *J. Funct.
