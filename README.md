@@ -588,11 +588,49 @@ graves errores).
 
 ##### Estado en la programación orientada a objetos
 
+La conclusión es que todas las formas de programación orientada a objetos se
+basan en el estado (contenido en los propios objetos) y en general, todo el
+comportamiento es influenciado por este estado. A consecuencia de esto, la
+programación orientada a objetos padece de forma directa los problemas asociados
+con el estado que se describieron anteriormente y, por tanto, creemos que no
+proporciona los fundamentos necesarios para evitar la complejidad.
+
 #### 5.1.2 Control
+
+La mayoría de los lenguajes orientados a objetos proveen un flujo de control
+secuencial estándar y muchos de ellos, también ofrecen mecanismos para la
+clásica "concurrencia de estado compartido" junto con todos los problemas de
+complejidad asociados. Los lenguajes con modelo de actores se diferencian de los
+anteriores en que ofrecen un modelo de concurrencia basado en "paso de mensajes"
+(se asocian hilos de control con objetos individuales y los mensajes circulan
+entre ellos). Este modelo puede llevar a un razonamiento informal más accesible
+en algunos casos pero los lenguajes con modelo de actores no se han llegado a
+popularizar.
+
 #### 5.1.3 POO: resumen
 
+Los programas imperativos y orientados a objetos sufren enormemente de la
+complejidad derivada tanto del estado como del flujo de control.
+
 ### 5.2 Programación funcional
+
+Mientras que la programación orientada a objetos fue motivada para tratar mejor
+con la clásica arquitectura de von-Neumann basada en el estado, la programación
+funcional tiene sus raíces en el cálculo lambda de Church (si descartamos
+aproximaciones aún más simples basadas en lógica combinatoria), que es
+completamente ajeno al estado. El lambda cálculo no tipado es equivalente en
+potencia a la abstracción computacional basada en estado por antonomasia: la
+máquina de Turing.
+
 #### 5.2.1 Estado
+
+Los lenguajes de programación funcionales modernos son habitualmente
+clasificados como "puros", aquellos que como Haskell [PJ+03] evitan el estado y
+los efectos laterales completamente, e "impuros", aquellos que como ML empujan a
+evitar el estado y los efectos laterales pero los permiten. Cuando no se
+mencione explícitamente nos referiremos a la programación funcional en su forma
+pura.
+
 #### 5.2.2 Control
 #### 5.2.3 Tipos de estado
 #### 5.2.4 Estado y modularidad
