@@ -631,7 +631,37 @@ evitar el estado y los efectos laterales pero los permiten. Cuando no se
 mencione explícitamente nos referiremos a la programación funcional en su forma
 pura.
 
+La principal fortaleza de la programación funcional es que al evitar el estado
+(y los efectos laterales) el sistema resultante adquiere *transparencia
+referencial*. Esto implica que a partir de unos argumentos dados, una función
+siempre producirá el mismo resultado (o más informalmente, siempre tendrá el
+mismo comportamiento). Todo aquello que pueda influir en el resultado siempre
+estará presente en los parámetros de entrada.
+
+Esta férrea garantía evita uno de los problemas asociados a las pruebas ya
+discutidos. Consecuentemente, incluso a pesar de que el otro problema persiste
+(probar con unas entradas *no dice nada* sobre el comportamiento con otras), el
+proceso de pruebas es mucho más efectivo en un sistema desarrollado en un estilo
+funcional.
+
+Al evitar el estado, la programación funcional, también evita todos los otros
+problemas asociados a la gestión del estado ya presentados por lo que, entre
+otras cosas, el razonamiento informal se vuelve mucho más efectivo.
+
 #### 5.2.2 Control
+
+La mayoría de lenguajes funcionales tienen un orden secuencial implícito (de
+izquierda a derecha al evaluar los argumentos de las funciones) y por tanto
+padecen muchos de los problemas ya mencionados. Sin embargo, los lenguajes
+funcionales si que disfrutan de una ligera ventaja en lo relativo al control ya
+que incentivan el uso de estructuras de control más abstractas de orden superior
+(como `fold` / `map`) en lugar de iteración explícita.
+
+También existen versiones concurrentes de muchos lenguajes funcionales y el
+hecho de que, en general, evitan el estado puede dar réditos en este área. Por
+ejemplo, en un lenguaje funcional puro es siempre seguro evaluar todos los
+argumentos de una función en paralelo.
+
 #### 5.2.3 Tipos de estado
 #### 5.2.4 Estado y modularidad
 #### 5.2.5 Programación funcional: resumen
