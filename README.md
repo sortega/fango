@@ -610,8 +610,8 @@ del software y el resto las clasifica como "accidentales".
 
 Normalmente usaremos los términos con el mismo signicado, pero preferimos
 comenzar considerando a la complejidad del problema en sí misma incluso antes de
-haber introducido al software en el contexto. Es por ello que definimos los
-siguientes dos tipos de complejidad:
+siquiera mencionar al software. Es por ello que definimos los siguientes dos
+tipos de complejidad:
 
 - **Complejidad esencial** es inherente y la esencial del *problema* (como se
   percibe por los usuarios).
@@ -623,12 +623,12 @@ siguientes dos tipos de complejidad:
 
 Nótese que la definición de *esencial* es deliberadamente más estricta que en su
 uso común. Especialemente cuando usamos el término *esencial*, estrictamente
-queremos decir esencial para *los problemas de los usuarios* (en lugar de,
-quizás, esencial *para algo específico, implementado, del sistema,* o incluso,
-esencial *para el software en general*). Como ejemplo, de acuerdo a la
-terminología que usaremos en este artículo, bits, bytes, transistores,
-electricidad y ordenadores en sí mismos *no* son en ningún sentido esenciales
-(porque no tienen nada que ver con los problemas de los usuarios).
+queremos decir esencial a *los problemas de los usuarios* (en lugar de, quizás,
+esencial *para algo específico, implementado, del sistema,* o incluso, esencial
+*para el software en general*). Por ejemplo, de acuerdo a la terminología que
+usaremos en este artículo, bits, bytes, transistores, electricidad y ordenadores
+en sí mismos *no* son en ningún sentido esenciales (porque no tienen nada que
+ver con los problemas de los usuarios).
 
 Igualmente, el término "accidente" es comúnmente más usado con la connotación de
 "percance". Aquí (al igual que Brooks) lo usamos en el sentido más general de
@@ -640,18 +640,18 @@ lenguaje e infrastructura determinados) y mantener un sistema de software que
 cumple los propositos de sus usuarios. La complejidad en la cual estamos
 interesados es la de este propósito y esto es lo que tratamos de clasificar como
 accidental o esencial. Hasta ahora vemos la complejidad esencial como "la
-complejidad, la cual, el equipo *tendrá* que prestarle atención, incluso en un
+complejidad, a la que el equipo *tendrá* que prestarle atención, incluso en un
 mundo ideal".
 
 Mencionar que el "tener que" partir de esta observación es fundamental, si hay
-cualquier forma *posible* de que el equipo pudiera producir un sistema que los
-usuarios consideraran correcto *sin* tener en consideración el tipo de
+cualquier otra forma *posible* de que el equipo pudiera producir un sistema que
+los usuarios consideraran correcto *sin* tener en consideración un tipo de
 complejidad dada, entonces esa complejidad no sería esencial.
 
-Teniendo en cuenta que en un mundo ideal no todas las *posibles* opciones son
-válidas, la conclusión es que ningún desarrollador de verdad necesitará lidiar
-con *algo* de complejidad accidental. La definición no pretende negar esto,
-simplemente identificar su naturaleza secundaria.
+Dado que en el mundo real no todas las *aproximaciones* son prácticas, se deduce
+que cualquier desarrollo necesitará lidiar con algo de complejidad accidental.
+La definición no pretende negar esto, simplemente identificar su naturaleza
+secundaria.
 
 En última instancia (como veremos más adelante en la sección 7) nuestra
 definición es equivalente a decir que lo que es esencial para el equipo es lo
@@ -665,31 +665,31 @@ encontrar una infrastructura que ya resuelva el problema de los usuarios por
 completo. Si bien, es posible imaginar que alguien ya ha hecho el trabajo, no es
 particularmente esclarecedor, puede ser mejor considerar una restricción
 implícita de que el hipotético lenguaje e infrastructura sean de uso general y
-de dominio neutral.
+neutral al dominio.
 
-Una consecuencia de esta definición es que si el usuario ni siquiera *sabe qué*
-*es algo* (e.g. un grupo de hilos o un contador de un bucle, por seleccionar dos
-ejemplos arbitrarios) entonces no puede ser posible por nuestra definición de
-esencial (estamos suponiendo, por supuesto, por desgracia la posibilidad con
-algo de optimismo, que los usuarios, de hecho, conocen y comprenden el problema
-que quieren resolver).
+Una consecuencia de esta definición es que si el usuario ni siquiera *sabe qué
+es algo* (e.g. un grupo de hilos o un contador de un bucle, por seleccionar dos
+ejemplos arbitrarios) no es posible que sea esencial dada nuestra definición
+(estamos suponiendo, por supuesto, por desgracia la posibilidad con algo de
+optimismo, que los usuarios, de hecho, conocen y comprenden el problema que
+quieren resolver).
 
-Brooks afirma [Bro86] \(y otros como Booch corroboran [Boo91]) que "la
+Brooks afirma [Bro86] (y otros como Booch corroboran [Boo91]) que "la
 complejidad del software es una propiedad esencial, no accidental". Esto sugiere
 que la mayoría (al menos) de la complejidad que encontramos en los grandes
 sistemas contemporáneos es de tipo esencial.
 
-Disentimos. La complejidad no es un propiedad del software inherente (o
-esencial) de por sí (es perfectamente posible escribir software simple y sin
+Disentimos. La complejidad no es un propiedad inherente al software (o
+esencial) por sí misma (es perfectamente posible escribir software simple y sin
 embargo que siga siendo software), es más, mucha de la complejidad que vemos en
 el software existente no es esencial (para el problema). Cuando se trata de
 complejidad accidental y esencial creemos firmemente que la primera existe y que
 el objetivo de la ingeniería del software tiene que ser eliminar tanta como sea
-posible, y a la vez, ayudar con esto último.
+posible, y a la vez, ayudar con la segunda.
 
 Debido a esto, es vital que examinemos cuidadosamente la *complejidad*
-*accidental*. Ahora intentamos clasificar los casos de complejidad, ya sean
-accidentales o esenciales.
+*accidental*. Ahora intentaremos clasificar la complejidad en accidental o
+esencial para ciertos casos.
 
 ## 7. Recomendaciones generales
 
