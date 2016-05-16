@@ -784,7 +784,7 @@ los modelos jerárquico y en red es la capacidad de *evitar* completamente el
 concepto de camino de acceso.
 
 También es interesante considerar brevemente lo que implica aplicar una
-aproximación orientada a objetos (OOP) a nuestro ejemplo. Podemos elegir entre
+aproximación orientada a objetos (POO) a nuestro ejemplo. Podemos elegir entre
 estas opciones:
 
  - Dar a los objetos `Employee` una referencia a su `Department`.
@@ -795,10 +795,14 @@ estas opciones:
 Si elegimos la tercera opción nos exponemos en el mejor caso al trabajo
 adicional de mantener referencias redundantes y en el peor a introducir errores.
 
-Hay inquietantes similitudes entre las aproximaciones de la OOP y el XML a cómo
+Hay inquietantes similitudes entre las aproximaciones de la POO y el XML a cómo
 estructurar datos y los modelos jerárquico y en red.
 
-Finalmente, una ventaja de las relaciones como forma de estructurar datos en contraposición a aproximaciones como el modelo entidad-relación de Chen [Che76] es que no se hace distinción alguna entre *entidad* y *relación*. (Utilizar dicha distinción puede ser problemático porque puede ser muy subjetivo clasificar algo como *entidad* o como *relación*.)
+Finalmente, una ventaja de las relaciones como forma de estructurar datos en
+contraposición a aproximaciones como el modelo entidad-relación de Chen [Che76]
+es que no se hace distinción alguna entre *entidad* y *relación*. Utilizar
+dicha distinción puede ser problemático porque puede ser muy subjetivo
+clasificar algo como *entidad* o como *relación*.
 
 ### 8.2 Manipulación
 
@@ -812,11 +816,9 @@ El álgebra relacional (en una forma ligeramente diferente de cómo lo presentó
 Codd originalmente) consiste en las siguientes ocho operaciones:
 
  - **Restricción (restrict).** Operación unaria que permite la selección de un
-   subconjunto
-   de los registros de acuerdo a un criterio dado.
+   subconjunto de los registros de acuerdo a un criterio dado.
  - **Proyección (project).** Operación unaria que produce una nueva relación en
-   la que
-   algunos atributos han sido eliminados.
+   la que algunos atributos han sido eliminados.
  - **Producto (product).** Operación binaria que se corresponde con el producto
    cartesiano tal y como se define en matemáticas.
  - **Unión (union).** Operación binaria que produce una relación que contiene
@@ -833,7 +835,10 @@ Codd originalmente) consiste en las siguientes ocho operaciones:
    uno* de los registros del tercero.
    
 Uno de los beneficios más significativos de este lenguaje de manipulación
-(aparte de su simplicidad) es que tiene la propiedad de *clausura*: todos los operandos y resultados son de la misma clase (relaciones). Por lo tanto, las operaciones se pueden anidar de forma arbitraria (lo que de hecho es inherente a cualquier álgebra monotipo).
+(aparte de su simplicidad) es que tiene la propiedad de *clausura*: todos los
+operandos y resultados son de la misma clase (relaciones). Por lo tanto, las
+operaciones se pueden anidar de forma arbitraria (lo que de hecho es inherente a
+cualquier álgebra monotipo).
 
 ### 8.3 Integridad
 
@@ -846,8 +851,8 @@ que estas restricciones se cumplen, específicamente en los intentos de modifica
 el estado que puedan contravenir las restricciones tienen que ser rechazadas o
 restringidas a operar dentro de los límites.
 
-Las restricciones más comunes son aquellas identificando claves *candidatas* o
-*primarias* y claves *extrajeras*. Las restricciones pueden llegar a ser
+Las restricciones más comunes son aquellas que definen claves *candidatas* o
+*primarias* y claves *extranjeras*. Las restricciones pueden llegar a ser
 arbitrariamente complejas, involucrar múltiples relaciones y ser construidas
 utilizando tanto el álgebra como el cálculo relacional.
 
