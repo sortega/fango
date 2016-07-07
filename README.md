@@ -663,6 +663,67 @@ ejemplo, en un lenguaje funcional puro es siempre seguro evaluar todos los
 argumentos de una función en paralelo.
 
 #### 5.2.3 Tipos de estado
+
+En la mayoría de este artículo cuando mencionamos "estado" a lo que realmente
+nos referimos es a "estado mutable".
+
+En los lenguajes que no soportan (o desincentivan) el estado mutable es común
+conseguir efectos similares pasando parámetros adicionales a los procedimientos
+(funciones). Consideremos un procedimiento que realiza algún tipo de cálculo con
+estado que devuelve un resultado. Quizás el procedimiento implementa un contador
+y devuelve un valor incrementado con cada llamada:
+
+    procedure int getNextCounter()
+      // 'counter' is declared and initialized elsewhere in the code
+      counter := counter + 1
+      return counter
+
+La forma en la que esto se suele implementar en un lenguaje funcional básico
+consiste en reemplazar el procedimiento sin parámetros basado en estado con una
+función que recibe un argumento y devuelve un par de valores como resultado.
+
+    function (int,int) getNextCounter(int oldCounter)
+      let int result = oldCounter + 1
+      let int newCounter = oldCounter + 1
+      return (newCounter, result)
+
+Esto impone a quién invoque la función la obligación de asegurarse de que la
+siguiente vez que se llame a `getNextCounter` se le proporcione el `newCounter`
+devuelto en la anterior invocación. En efecto, lo que está pasando es que el
+estado que se ocultaba dentro del procedimiento `getNextCounter` ha sido
+reemplazado por un nuevo parámetro tanto en la entrada como en la salida de la
+función `getNextCounter`. Este parámetro adicional no es *mutable* en forma
+alguna (la entidad que es referida como `oldCounter` es un *valor* diferente
+cada vez que se invoca la función).
+
+Como hemos discutido, la versión funcional de este programa *tiene*
+transparencia referencial al contrario que la versión imperativa. Por lo tanto
+el llamante del *procedimiento* `getNextCounter` desconoce que puede influir en
+el resultado que recibe (en principio, podría depender de un gran número de
+variables mutables ocultas) mientras que el llamante de la *función*
+`getNextCounter` puede ver inmediatamente que el resultado depende sólo de los
+valores proporcionados a la función.
+
+A pesar de esto, es un hecho que estamos usando valores funcionales para simular
+estado. No hay nada que, *en principio*, impida a los programas funcionales
+pasar y devolver un único parámetro adicional en cada una de las funciones del
+sistema. Si este parámetro fuese una colección (valor compuesto) podría usarse
+para *simular* un gran conjunto de variables mutables. Como resultado, este
+método recrea un conjunto de variables globales y, por lo tanto, aunque se
+mantiene la transparencia referencial se pierde la facilidad de razonamiento
+(seguimos sabiendo que cada función depende sólo de sus argumentos pero uno de
+ellos es muy grande *y contiene valores irrelevantes* por lo que este
+conocimiento como ayuda para la compresión es poco valioso). Este es, sin
+embargo, un ejemplo extremo y no menoscaba la potencia que en general tiene la
+aproximación funcional.
+
+Merece la pena mencionar brevemente que, aunque no se disfrute de la *garantía*
+de la transparencia referencial, no hay ninguna razón por la que el estilo de
+programación funcional no se pueda adoptar en los lenguajes con estado (i.e.
+imperativos y funcionales impuros). De forma más general podíamos argumentar
+que, sin importar el lenguaje utilizado, es beneficioso evitar el estado
+mutable, implícito y oculto.
+
 #### 5.2.4 Estado y modularidad
 #### 5.2.5 Programación funcional: resumen
 
