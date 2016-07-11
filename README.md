@@ -725,6 +725,59 @@ que, sin importar el lenguaje utilizado, es beneficioso evitar el estado
 mutable, implícito y oculto.
 
 #### 5.2.4 Estado y modularidad
+
+A veces se argumenta (e.g. [vRH4, p315]) que el estado es importante porque
+permite un cierto tipo de modularidad, lo que es cierto. Dentro de un marco de
+trabajo con estado es posible añadir estado adicional a cualquier componente sin
+modificar los componentes que lo invocan. Desde el marco de trabajo funcional el
+mismo efector sólo puede conseguirse modificando cada componente que lo invoque
+de forma que se haga llegar la nueva información adicional (como en el caso de
+la función `getNextCounter` vista anteriormente).
+
+Hay un compromiso fundamental entre ambas aproximaciones. En la aproximación
+funcional (cuando se intenta tener resultados parecidos a la basada en estado)
+eres forzado a cambiar cada parte del programa que podría ser afectada
+(añadiendo el nuevo parámetro relevante) mientras que en la basada en estado no
+es necesario.
+
+Sin embargo, esto significa que en un programa funcional *siempre puedes
+determinar que controla el resultado de un procedimiento (i.e. función)*
+simplemente mirando a los argumentos proporcionados en su invocación. En un
+programa basado en estado, esta propiedad (de nuevo, a consecuencia de la
+*transparencia referencial*) es completamente destruida, nunca puedes saber qué
+controlará el resultado, y *potencialmente* tendrás que inspeccionar cada
+fragmento de código de *todo el sistema* para determinarlo.
+
+El compromiso se da entre la *complejidad* (con la habilidad de tomar un atajo
+con determinados tipos de cambio) y la *simplicidad* (con *enormes* mejoras en
+términos de pruebas y comprensión). Al igual que con la disciplina del tipado
+(estático), se intercambia una única inversión por adelantado a cambio de
+futuras ganancias continuadas y seguridad ("por adelantado" ya que cada
+fragmento de código es escrito una vez y leído, razonado y probado
+continuamente).
+
+Un problema adicional con el argumento de la modularidad es que algunos
+ejemplos, como el del uso de la cuenta de invocaciones a un procedimiento
+(función) para depuración/mejora de rendimiento, parecen más apropiados para la
+infraestructura/lenguaje en lugar de para el sistema en sí mismo (preferimos
+recomendar una separación clara entre las tareas administrativas/de diagnóstico
+y el núcleo del sistema).
+
+Aún así es un hecho que estos argumentos han sido insuficientes para una
+adopción extendida de la programación funcional. Por tanto, debemos concluir que
+el principal punto débil de la programación funcional es el reverso de su
+principal fortaleza: los problemas que se dan cuando el sistema debe mantener
+estado de algún tipo (lo que es muy común).
+
+Es inevitable preguntarse si hay alguna forma de "estar en misa y repicando".
+Una posibilidad es el elegante sistema de mónadas utilizado por Haskell [Wad95].
+Este sistema permite evitar el problema anterior pero se puede abusar del mismo
+para crear un sub-lenguaje con estado y efectos laterales (y, por tanto,
+re-introducir todos los problemas que se buscaba evitar) en Haskell, aunque al
+menos deja su marca en los tipos de las funciones. De nuevo, a pesar de sus
+puntos fuertes, las mónadas han sido insuficientes para permitir una adopción
+mayoritaria de las técnicas funcionales.
+
 #### 5.2.5 Programación funcional: resumen
 
 ### 5.3 Programación lógica
