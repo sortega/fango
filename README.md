@@ -780,6 +780,10 @@ mayoritaria de las técnicas funcionales.
 
 #### 5.2.5 Programación funcional: resumen
 
+La programación funcional evita en gran medida los problemas de la complejidad
+derivada del estado. Esto aporta beneficios significativos para el proceso de
+pruebas (se evita lo que normalmente es el mayor problema) y para razonamiento.
+
 ### 5.3 Programación lógica
 #### 5.3.1 Estado
 #### 5.3.2 Control
