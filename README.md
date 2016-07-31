@@ -785,6 +785,42 @@ derivada del estado. Esto aporta beneficios significativos para el proceso de
 pruebas (se evita lo que normalmente es el mayor problema) y para razonamiento.
 
 ### 5.3 Programación lógica
+
+La programación lógica junto con la funcional son consideradas de estilo
+*declarativo* porque el énfasis está en la especificación de *qué* debe hacerse
+en lugar de exactamente *cómo* hacerlo. Al igual que en el caso de la
+programación funcional (y en contraste con la POO), los principios y la visión
+de la programación lógica *no* se derivan de la arquitectura basada en estado de
+von-Neumann.
+
+La programación lógica pura consiste en limitarse a hacer afirmaciones *acerca*
+del problema (y de las soluciones deseadas). Esto se lleva a cabo declarando un
+conjunto de *axiomas* que *describen* el problema y los atributos que debe
+poseer algo para ser considerado una solución. Idealmente, debe haber una
+infraestructura que a partir de nada más que los axiomas pueda encontrar o
+comprobar las soluciones. Todas las soluciones se desgranan de la lógica formal
+como consecuencia de los axiomas y "ejecutar" el sistema es equivalente a
+construir una *demostración* formal de cada solución.
+
+El "lenguaje lógico" fundacional fue Prolog. En Prolog se puede distinguir entre
+un *núcleo puramente lógico* (Prolog puro) y varias extensiones
+*extra-lógicas*[^5]. El Prolog puro es cercano a los ideales de la programación
+lógica aunque hay importantes diferencias. Cada programa en Prolog puro se puede
+"leer" de dos formas, bien como un *conjunto puro de axiomas*, es decir,
+afirmaciones acerca del dominio del problema; u *operacionalmente*, como una
+secuencia de órdenes que se aplican (en un orden particular) para determinar si
+un objetivo es deducible a partir de los axiomas. Esta segunda lectura se
+corresponde con la forma en la que Prolog hace uso de los axiomas para probar
+sus objetivos. Es destacable que un mismo programa puede ser al mismo tiempo
+correcto al leerse de la primera forma e incorrecto (por ejemplo por no llegar a
+terminar jamás) de la segunda.
+
+[^5]: Usamos el término para referirnos a *cualquier cosa* excepto el núcleo de Prolog puro. Por ejemplo, incluimos a lo que a veces se describe como características meta-lógicas.
+
+Por este motivo Prolog no llega a realizar los ideales de la programación
+lógica. Específicamente porque es necesario preocuparse de la interpretación
+operativa del programa mientras se escriben sus axiomas.
+
 #### 5.3.1 Estado
 #### 5.3.2 Control
 #### 5.3.3 Programación lógica: resumen
