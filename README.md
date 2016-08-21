@@ -822,8 +822,62 @@ lógica. Específicamente porque es necesario preocuparse de la interpretación
 operativa del programa mientras se escriben sus axiomas.
 
 #### 5.3.1 Estado
+
+La programación lógica pura no hace uso de estado mutable alguno y por esa razón
+se beneficia de las mismas ventajas que la programación funcional tiene para su
+comprensión. Sin embargo, muchos lenguajes basados en este paradigma si ofrecen
+mecanismos basados en estado. Por ejemplo, en la parte extra-lógica de Prolog
+hay mecanismos para que el programa se modifique a si mismo añadiendo nuevos
+axiomas. Otros lenguajes como Oz (que tiene sus raíces en la programación lógica
+pero que ha sido extendido para ser "multi-paradigma") proporcionan estado
+mutable de la forma tradicional, de forma similar a como se proporciona en por
+los lenguajes funcionales *impuros*.
+
+Todas estas aproximaciones al estado sacrifican la transparencia referencial y,
+por tanto, sufren de las mismas desventajas que los lenguajes imperativos tienen
+a este respecto. La principal ventaja que todos estos lenguajes impuros no
+derivados del modelo von Neumann tienen es que, aunque el estado se permite, su
+uso es desincentivado (lo que contrasta fuertemente con el estilo von Neumann
+fundamentado en el estado). Aún así, sin pureza no hay garantías de que los
+típicos problemas asociados al estado puedan darse.
+
 #### 5.3.2 Control
+
+En el caso del Prolog puro, el lenguaje especifica tanto un orden *implícito*
+para procesar los sub-objetivos (de izquierda a derecha) como un orden
+*implícito* para las clausulas (de arriba a abajo) que se corresponde
+básicamente con una interpretación operacional en la que se *procesa* el
+programa en el mismo orden en el que se lee el texto (con una estrategia primero
+en profundidad). Esto significa que ciertas formas de escribir el programa
+producen ejecuciones que nunca terminan y esto, cuando se combina con el hecho
+de que algunas características extra-lógicas permiten efectos laterales, conduce
+inevitablemente a la dificultad habitual que el flujo de control impone a la
+comprensión. Nótese que estas dificultades para razonar *no* se darían en un
+entorno ideal de programación lógica dónde, simplemente, no se especifica el
+control (en contraposición al Prolog puro, en el que si se especifica).
+
+Respecto a las características extra-lógicas de Prolog, algunas de ellas ahondan
+esta discrepancia entre el lenguaje y la programación lógica en su forma ideal.
+Un ejemplo de esto son los "cortes" que ofrecen un mecanismo *explícita* para
+restringir el flujo de control. Estas restricciones explícitas se entrelazan con
+el componente de lógica pura del sistema e, inevitable perjudican a los intentos
+de razonar sobre el programa (de hecho la mala interpretación de los efectos de
+los cortes es una de las principales fuentes de errores en Prolog [SS94, p190]).
+
+Es importante mencionar que algunos de los lenguajes de la familia lógica
+ofrecen más flexibilidad sobre el control que el orden implícito de búsqueda en
+profundidad usado por Prolog. Un ejemplo sería Oz, que ofrece la habilidad de
+programar estrategias específicas que pueden ser aplicadas a diferentes
+problemas a voluntad. Esto es muy útil porque permite una importante
+flexibilidad *explícita* en el control que puede ser especificada de forma
+*separada* del programa principal (i.e. sin contaminarlo con la complejidad
+añadida del propio control).
+
 #### 5.3.3 Programación lógica: resumen
+
+Uno de los aspectos más interesantes acerca de la programación lógica es que, a
+pesar de las limitaciones de algunos de los lenguajes basados en ella, ofrece la
+tentadora promesa de poder escapar de la complejidad causada por el control.
 
 ## 6. Accidentes y esencia
 
