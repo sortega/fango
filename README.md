@@ -973,12 +973,57 @@ Dado que nuestras recomendaciones principales giran alrededor de intentar
 *evitar* tanta complejidad accidental como sea posible, necesitamos preguntarnos
 *qué* complejidad deben ser considerada accidental y cuál esencial.
 
-Debemos responder esta pregunta considerando qué complejidad es *imposible*
-evitar incluso en un mundo ideal (esto es básicamente nuestra *definición* de
+Debemos responder esta pregunta considerando qué complejidad es *inevitable*
+incluso en un mundo ideal (esto es básicamente nuestra *definición* de
 esencial). A continuación veremos cómo de realista es este mundo ideal y
 finalmente daremos algunas recomendaciones.
 
 ### 7.1 Mundo ideal
+
+En un mundo ideal no tendríamos que preocuparnos por el rendimiento y tanto el
+lenguaje como la infrastructura nos proveerían soporte para cualquier necesidad
+de propósito general que podamos desear. Analizaremos *estado* y *control* en
+este contexto. Específicamente, identificaremos como *accidental* aquel estado y
+control que podamos omitir en este mundo ideal.
+
+Incluso en un mundo ideal es necesario un punto de partida y parece razonable
+asumir que se parta de un conjunto de *requisitos informales* por parte de los
+futuros usuarios.
+
+Nuestra siguiente observación es que, dado que finalmente algo tiene que
+*suceder*, como por ejemplo que el sistema se procese de forma mecánica por un
+ordenador, necesitaremos definiciones *formales*. Vamos a tener que derivar
+requisitos formales a partir de los informales.
+
+Tomando ambas ideas, en un mundo ideal tenemos:
+
+Requisitos informales -> Requisitos formales
+
+Dado que buscamos la máxima simplicidad, es crucial que la formalización no
+introduzca ningún aspecto *accidental*. Especificamente, esto implica que la
+formalización no contemple ningún aspecto relacionado con la *ejecución*. La
+*única* preocupación que tendremos al producir los requisitos formales es
+asegurarse de que no hay ninguna ambigüedad relevante[^6] en los requisitos
+(i.e. no hay omisiones).
+
+[^6]: Incluímos la palabra "relevante" porque, en muchos casos, pueden existir múltiples soluciones aceptables. En esos casos los requisitos pueden ser ambiguos sin que se consediere anbigüedad "relevante", es decir, no se trata de una omisión errónea.
+
+¿Cuál debe ser el sigiente paso tras formalizar los requisitos? Dado que estamos
+considerando un mundo ideal no es descabellado asumir que el siguiente paso es
+simplemente *ejecutar* los requisitos formales directamente en nuestra
+infrastructura de propósito general[^7].
+
+[^7]: Si se dan amgiguedades *irrelevantes* esto significará que la infrastructura debe *elegir* una de las soluciones o quizás proporcionar todas ellas.
+
+Este escenario es sinónimo de simplicidad *absoluta* ya que no parece concebible
+forma alguna de mejora incluso en un mundo ideal.
+
+Es notable que lo que acabamos de describir es la *essencia* de la *programación
+declarativa* en la que se especifica *qué* se requiere y no *cómo* obtenerlo.
+
+A continuación consideraremos los efectos de esta aproximación "ideal" en las
+causas de la complejidad introducidas anteriormente.
+
 #### 7.1.1 Estado en el mundo ideal
 #### 7.1.2 Control en el mundo ideal
 #### 7.1.3 Resumen
